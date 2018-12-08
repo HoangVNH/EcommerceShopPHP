@@ -236,7 +236,6 @@ button.btn.btn-lg{
     width: 100%;
 }
 
-
 /* show sản phẩm*/
 
 .preview {
@@ -513,8 +512,6 @@ a:hover{
 }
 /* hết thông tin chi tiet san pham */
 
-
-
 /* shopping cart */
 select{
     border: none;
@@ -570,7 +567,6 @@ select{
 .product .product-price::after, .product .product-line-price:after, .totals-value:after {
     content: ' đ';
 }
-
 
 h1 {
     font-weight: 500;
@@ -770,6 +766,7 @@ input:checked + .slider:before {
     .header{
         min-width: 0;
     }
+
     #carouselExampleIndicators{
         visibility: hidden;
     }
@@ -896,8 +893,7 @@ input:checked + .slider:before {
     .manunew a img{
         width: 145px;
     }
-    .header-top.mobile
-    {
+    .header-top.mobile {
         height: 50px;
     }
     .mobile-img{
@@ -918,7 +914,6 @@ input:checked + .slider:before {
     .tv-logo{
         margin-left: 100px !important;
     }
-
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) { 
@@ -968,7 +963,6 @@ input:checked + .slider:before {
         position: absolute;
         bottom: 0;
     }
-    
 }
 
 @media (min-width: 1200px) { 
@@ -1014,7 +1008,6 @@ input:checked + .slider:before {
         margin-left: 20px;
     }
 
-
     .product-removal {
         width: auto;
     }
@@ -1041,7 +1034,7 @@ input:checked + .slider:before {
     }
     .totals .totals-item .totals-value {
         width: 40%;
-}
+    }
 }
 /* hết reponse cho shopping cart */
 .gotopBtn{

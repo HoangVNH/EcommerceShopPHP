@@ -21,6 +21,7 @@ class SanPham
     var $MaHangSanXuat;
     var $MaLoai;
     var $TenHienThi;
+    var $BiXoa;
 
     public function __construct()
     {
@@ -37,5 +38,6 @@ class SanPham
         $this->MaHangSanXuat = 0;
         $this->MaLoai = 0;
         $this->TenHienThi = "";
+        $this->BiXoa = 0;
     }
 }

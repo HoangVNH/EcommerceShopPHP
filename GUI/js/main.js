@@ -169,22 +169,11 @@ $('.product-removal button').click( function() {
     removeItem(this);
 });
 
-
-/* Xóa mục khỏi giỏ hàng */
-
-function removeItem(removeButton)
-{
-    var productRow = $(removeButton).parent().parent();
-    productRow.slideUp(500, function() {
-    productRow.remove();
-    recalculateCart();
-});
-}
 /* hết phần shopping cart */
 
 var showpassword = true;
 function showpass()
-{   
+{
     if(showpassword == true)
     {
         document.getElementById("password-group").style.display = 'block';

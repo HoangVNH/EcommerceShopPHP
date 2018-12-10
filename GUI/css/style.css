@@ -524,7 +524,7 @@ select{
 
 .product-details {
     float: left;
-    width: 37%;
+    width: 30%;
 }
 
 .product-price {
@@ -534,12 +534,12 @@ select{
 
 .product-quantity {
     float: left;
-    width: 10%;
+    width: 12%;
     }
 
 .product-removal {
     float: left;
-    width: 9%;
+    width: 14%;
 }
 
 .product-line-price {
@@ -547,6 +547,48 @@ select{
     width: 12%;
     text-align: right;
 }
+
+.product-images {
+    float: left;
+    width: 15%;
+}
+
+.product .product-images {
+
+}
+
+.product-detailss {
+    float: left;
+    width: 20%;
+}
+
+.product .product-detailss{
+
+}
+
+.product-prices {
+    float: left;
+    width: 25%;
+}
+
+.product .product-prices{
+    text-align: left;
+}
+
+.product-quantitys {
+    float: left;
+    width: 20%;
+}
+
+.product-line-prices {
+    float: left;
+    width: 20%;
+}
+
+.product .product-line-prices {
+
+}
+
 .group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
 .group:after,
 .shopping-cart:after,
@@ -563,9 +605,6 @@ select{
 
 .group, .shopping-cart, .column-labels, .product, .totals-item {
     zoom: 1;
-}
-.product .product-price::after, .product .product-line-price:after, .totals-value:after {
-    content: ' đ';
 }
 
 h1 {
@@ -603,6 +642,7 @@ label {
 .product .product-image {
     text-align: center;
 }
+
 .product .product-image img {
     width: 100px;
 }
@@ -648,6 +688,12 @@ label {
 }
 .totals .totals-item-total {
     font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+
+.totals-value {
+    font-size: 20px;
+    color: #000;
+    margin-top: 5px;
 }
 
 .checkout {
@@ -807,10 +853,6 @@ input:checked + .slider:before {
         margin-left: 10px !important;
     }
 
-    .gotopBtn{
-        display: none;
-    }
-
     .footer-1{
         position: relative;
         bottom: 2px;
@@ -893,7 +935,8 @@ input:checked + .slider:before {
     .manunew a img{
         width: 145px;
     }
-    .header-top.mobile {
+    .header-top.mobile
+    {
         height: 50px;
     }
     .mobile-img{
@@ -1034,22 +1077,6 @@ input:checked + .slider:before {
     }
     .totals .totals-item .totals-value {
         width: 40%;
-    }
-}
-/* hết reponse cho shopping cart */
-.gotopBtn{
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    background: #27ae60;
-    bottom: 40px;
-    right: 50px;
-    text-decoration: none;
-    text-align: center;
-    line-height: 50px;
-    color: white;
-    font-size: 22px;
-    z-index: 9999;
 }
 
 .btnReturn{

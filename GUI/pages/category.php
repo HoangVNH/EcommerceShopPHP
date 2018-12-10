@@ -86,7 +86,7 @@
 <!--Kết quả -->
 <div class="container">
     <h3 class="title text-left SPBanChay">Sản phẩm nổi bật</h3>
-        <div class="row">
+    <div class="row">
     <?php
         $sanPhamBUS = new SanPhamBUS();
         $lstSanPham = $sanPhamBUS->GetOnCategory($cat);
@@ -105,5 +105,5 @@
         }
     ?>
 </div>
-
+</div>
 

@@ -32,7 +32,6 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
                 </div>
             </div>
             <div class="details col-md-6">
-                <form method="POST" action="#">
                     <?php
                         echo '<h3 class="product-title">' . $sanPham->TenSanPham . '</h3>';
                     ?>
@@ -56,13 +55,8 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
                     echo '<p class="vote">Hãng sản xuất: ' . $tenHangSX . '</p>';
                     ?>
                     <div class="action">
-                        <button class="add-to-cart btn btn-default" type="submit">Mua Ngay <i class="fa fa-shopping-cart"></i></button>
+                        <a href="?h=exCart&id=<?php echo $sanPham->MaSanPham ?>"><button class="add-to-cart btn btn-default">Mua Ngay <i class="fa fa-shopping-cart"></i></button></a>
                     </div>
-                    <?php
-                        echo '<input type="hidden" name="MaSanPham" value="'.$sanPham->MaSanPham.'" />'
-                    ?>
-                    <input type="hidden" name="type" value="add" />
-                </form>
             </div>
         </div>
     </div>

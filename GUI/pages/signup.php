@@ -215,7 +215,7 @@
             var username = $(this).val();
 
             $.ajax({
-                url:'GUi/pages/signupValidate.php',
+                url:'GUI/pages/signupValidate.php',
                 method:"POST",
                 data:{user_name:username},
                 success:function(data)

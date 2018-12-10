@@ -107,27 +107,6 @@ $(document).ready(function () {
     });
 });
 
-
-/** serch */
-(function () {
-    'use strict';
-    window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
-/** hết serch */
-
 /* show ảnh thông tin*/
 $(function () {
 
@@ -142,34 +121,6 @@ $(function () {
     });
 
 });
-
-$(function () {
-    $('a[href="#search"]').on('click', function (event) {
-        event.preventDefault();
-        $('#search').addClass('open');
-        $('#search > form > input[type="search"]').focus();
-    });
-
-    $('#search, #search button.close').on('click keyup', function (event) {
-        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-            $(this).removeClass('open');
-        }
-    });
-});
-
-/* shopping cart  */
-/* đặt tỉ lệ */
-
-/* Chỉ định tác vụ */
-// $('.product-quantity input').change( function() {
-//     updateQuantity(this);
-// });
-
-$('.product-removal button').click( function() {
-    removeItem(this);
-});
-
-/* hết phần shopping cart */
 
 var showpassword = true;
 function showpass()
@@ -186,5 +137,33 @@ function showpass()
         showpassword = true;
         return;
     }
-
 }
+
+$(document).ready(function(){
+    $(".qty").change(function(){
+        slm = $(this).val();
+        masp = $(this).attr("data-masp");
+        $.ajax({
+            url:"GUI/pages/exQty.php",
+            type:"POST",
+            data:"slm="+slm+"&masp="+masp,
+            success:function(){
+                location.reload();
+            }
+        });
+    });
+});
+
+$(document).ready(function (){
+   $(".myDelete").click(function(){
+        maSP = $(this).attr("data-sp");
+        $.ajax({
+            url:"GUI/pages/exDel.php",
+            type:"POST",
+            data:"id="+maSP,
+            success:function () {
+                location.reload();
+            }
+        });
+   });
+});

@@ -10,8 +10,10 @@ if(!isset($_SESSION))
 
 if(isset($_SESSION['TenNguoiDung']))
 {
-    unset($_SESSION['TenNguoiDung']);
-    unset($_SESSION['MaNguoiDung']);
+//    unset($_SESSION['TenNguoiDung']);
+//    unset($_SESSION['MaNguoiDung']);
+//    unset($_SESSION['GioHang']);
+    session_destroy();
     echo "<script>window.open('index.php','_self')</script>";
 }
 ?>

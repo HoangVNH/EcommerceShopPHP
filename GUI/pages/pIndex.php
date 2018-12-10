@@ -57,8 +57,6 @@
     </div>
 </div>
 
-<a href="#" class="gotopBtn"> <i class="fas fa-arrow-up"></i> </a>
-
 <!--sản phẩm bán mới nhất -->
 <div class="container">
     <h3 class="title text-left SPBanChay">SẢN PHẨM MỚI NHẤT</h3>
@@ -73,7 +71,7 @@
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>
-                    <h4 class="price">' . number_format($sanPham->Gia, 0, ".", ".")  . 'đ</h4>
+                    <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",")  . 'đ</h4>
                 </div>
                 </a>
             </div>');

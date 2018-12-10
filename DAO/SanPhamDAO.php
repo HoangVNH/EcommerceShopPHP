@@ -126,13 +126,14 @@ class SanPhamDAO extends DB
 
     public function GetDetail($id)
     {
-        $sql = "SELECT TenSanPham, Gia, HinhURL, LuotXem, SoLuongBan, MoTa, XuatXu, MaHangSanXuat, MaLoai FROM sanpham WHERE MaSanPham = $id";
+        $sql = "SELECT MaSanPham, TenSanPham, Gia, HinhURL, LuotXem, SoLuongBan, MoTa, XuatXu, MaHangSanXuat, MaLoai, TenHienThi FROM sanpham WHERE MaSanPham = $id";
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             return null;
         $row = mysqli_fetch_array($result);
         $sanPham = new SanPham();
 
+        $sanPham->MaSanPham = $row["MaSanPham"];
         $sanPham->TenSanPham = $row["TenSanPham"];
         $sanPham->Gia = $row["Gia"];
         $sanPham->HinhURL = $row["HinhURL"];
@@ -142,8 +143,9 @@ class SanPhamDAO extends DB
         $sanPham->XuatXu = $row["XuatXu"];
         $sanPham->MaHangSanXuat = $row["MaHangSanXuat"];
         $sanPham->MaLoai = $row["MaLoai"];
+        $sanPham->TenHienThi = $row["TenHienThi"];
 
-            return $sanPham;
+        return $sanPham;
     }
 
     public function GetSameType($maLoai, $maSanPham)

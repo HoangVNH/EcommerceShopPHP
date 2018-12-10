@@ -10,13 +10,13 @@ class ChiTietDonDatHang
 {
     var $MaChiTietDonDatHang;
     var $MaDonDatHang;
-    var $SoLuong;
     var $MaSanPham;
+    var $SoLuong;
     var $GiaSanPham;
 
     public function __construct()
     {
-        $this->MaChiTietDonDatHang = "";
+        $this->MaChiTietDonDatHang = 0;
         $this->MaDonDatHang = "";
         $this->SoLuong = 0;
         $this->MaSanPham = 0;

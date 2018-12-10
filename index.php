@@ -7,13 +7,9 @@
 if(!isset($_SESSION))
     session_start();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <?php include_once("GUI/modules/header.php"); ?>
-    <title>HTN STORE</title>
-</head>
-<body>
+
     <?php
         include_once("GUI/modules/menu.php");
         require_once("DTO/ChiTietDonDatHang.php");
@@ -27,10 +23,14 @@ if(!isset($_SESSION))
         require_once("DAO/HangSanXuatDAO.php");
         require_once("DAO/SanPhamDAO.php");
         require_once("DAO/TaiKhoanDAO.php");
+        require_once("DAO/DonDatHangDAO.php");
+        require_once("DAO/ChiTietDonDatHangDAO.php");
         require_once("BUS/HangSanXuatBUS.php");
         require_once("BUS/LoaiSanPhamBUS.php");
         require_once("BUS/SanPhamBUS.php");
         require_once("BUS/TaiKhoanBUS.php");
+        require_once("BUS/DonDatHangBUS.php");
+        require_once("BUS/ChiTietDonDatHangBUS.php");
 
         $a = isset($_GET['h']) ? $_GET['h'] : 'pIndex';
         $myPath = "GUI/pages/".$a.".php";
@@ -41,8 +41,7 @@ if(!isset($_SESSION))
     ?>
 
     <?php include_once("GUI/modules/footer.php"); ?>
-</body>
-</html>
+
 
 
 

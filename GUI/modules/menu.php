@@ -15,7 +15,7 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li><a href="?h=category&cat=2">LAPTOP</a></li>
                         <li><a href="?h=category&cat=3">TABLET</a></li>
                         <li><a href="?h=category&cat=4">ĐỒNG HỒ</a></li>
-                        <li><a href="#">NHÀ SX</a></li>
+                        <li><a href="#">HÃNG</a></li>
                         <li><a href="?h=cart"><i class="fa fa-shopping-cart" title="Giỏ hàng"></i></a></li>
                         <li>
                             <!-- user's infomation -->
@@ -45,7 +45,6 @@ if(isset($_SESSION['TenNguoiDung']))
             </div>
         </div>
     </div>
-    <a href="#" class="gotopBtn"> <i class="fas fa-arrow-up"></i> </a>
 <?php } else {  ?>
     <div class="container-fluid header">
         <div class="container">
@@ -57,7 +56,7 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li><a href="?h=category&cat=2">LAPTOP</a></li>
                         <li><a href="?h=category&cat=3">TABLET</a></li>
                         <li><a href="?h=category&cat=4">ĐỒNG HỒ</a></li>
-                        <li><a href="#">NHÀ SX</a></li>
+                        <li><a href="#">HÃNG</a></li>
                         <li><a href="?h=cart"><i class="fa fa-shopping-cart"></i></a></li>
                         <li>
                             <a href="?h=signin"><i class="fa fa-sign-in" aria-hidden="true" title="Đăng nhập"></i></a>
@@ -83,5 +82,4 @@ if(isset($_SESSION['TenNguoiDung']))
             </div>
         </div>
     </div>
-    <a href="#" class="gotopBtn"> <i class="fas fa-arrow-up"></i> </a>
 <?php } ?>

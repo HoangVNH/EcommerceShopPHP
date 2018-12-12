@@ -3,8 +3,7 @@
 if (!isset($_SESSION))
     session_start();
 
-//require_once ("C:/xampp/htdocs/DoAnWeb/GUI/pages/captcha.php");
-include_once ("../../GUI/pages/captcha.php");
+require_once ("C:/xampp/htdocs/DoAnWeb/GUI/pages/captcha.php");
 $captcha = new Captcha();
 
 // Lưu code vào $_SESSION

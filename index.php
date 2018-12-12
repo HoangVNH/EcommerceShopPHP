@@ -1,13 +1,10 @@
-<?php /*
- * Created by PhpStorm.
- * User: sunsh
- * Date: 06-Dec-18
- * Time: 3:31 PM
- */
+<?php
 if(!isset($_SESSION))
     session_start();
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <?php include_once("GUI/modules/header.php"); ?>
 
     <?php

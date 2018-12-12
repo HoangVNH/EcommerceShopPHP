@@ -17,5 +17,3 @@ if (!isset($_SESSION['captcha_code']) || $_SESSION['captcha_code'] != trim($capt
 }
 
 die(json_encode($err));
-
-?>

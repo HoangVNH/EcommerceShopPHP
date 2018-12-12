@@ -776,7 +776,6 @@ a.nav-item.nav-link{
     input.form-control.thongtin-2 {width: 76%;}
     .dangky-header{
         margin-top: 50px;
-        
     }
 
     .manunew a img{
@@ -1028,18 +1027,20 @@ a.nav-item.nav-link{
     .totals .totals-item label {
         width: 60%;
     }
+
     .totals .totals-item .totals-value {
         width: 40%;
-}
+    }
 
-.btnReturn{
-    padding: 15px 23px;
-    border-radius: 12px;
-}
+    .btnReturn {
+        padding: 15px 23px;
+        border-radius: 12px;
+    }
 
-.update-cart{
-    border: 0px;
-    background: #fff;
-    cursor: pointer;
-    color: blueviolet;
+    .update-cart {
+        border: 0px;
+        background: #fff;
+        cursor: pointer;
+        color: blueviolet;
+    }
 }

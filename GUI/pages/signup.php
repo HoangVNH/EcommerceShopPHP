@@ -172,6 +172,7 @@
                 <div class="form-group row">
                     <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Mã kiểm tra <span style="color: red;">*</span></label>
                     <div class="col-md-5">
+<!--                        <img src="GUI/pages/image.php" id="img-captcha"/>-->
                         <img src="GUI/pages/image.php" id="img-captcha"/>
                         <input type="button" value="Tải lại" onclick="$('#img-captcha').attr('src', 'GUI/pages/image.php?rand=' + Math.random())" /> <br />
                     </div>

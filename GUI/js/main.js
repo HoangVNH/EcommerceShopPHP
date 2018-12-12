@@ -224,8 +224,8 @@ $(document).ready(function (){
             data:"id="+maSP,
             success:function () {
                 $("#sp" + maSP).remove();
+                location.reload("cart-total");
             }
         });
-
    });
 });

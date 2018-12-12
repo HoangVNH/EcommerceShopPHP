@@ -61,7 +61,7 @@
                 foreach($lstSanPham as $sanPham)
                     echo ('
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a href="h=details&id=' . $sanPham->MaSanPham . '">
+                        <a href="?h=details&id=' . $sanPham->MaSanPham . '">
                         <div class="thumbnail effect">
                             <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                             <div class="productname">' . $sanPham->TenHienThi . '</div>

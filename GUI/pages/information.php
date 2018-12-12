@@ -40,7 +40,7 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <form>
+                    <form method="post" action="?h=exInformation">
                         <div class="form-group row" style="margin-top: 30px;">
                             <label for="" class="col-sm-4 col-md-2 col-form-label">Tên đăng nhập</label>
                             <div class="col-sm-8 col-md-6">
@@ -50,13 +50,13 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-md-2 col-form-label">Họ tên</label>
                             <div class="col-sm-8 col-md-6">
-                                <input type="text" class="form-control thongtin" id="" value="<?php echo $taiKhoan->HoTen ?>">
+                                <input type="text" class="form-control thongtin" id="" name="hoTen" value="<?php echo $taiKhoan->HoTen ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-md-2 col-form-label">Ngày sinh</label>
                             <div class="col-sm-8 col-md-6">
-                                <input type="text" class="form-control thongtin" id="" value="<?php echo ($taiKhoan->NgaySinh); ?>">
+                                <input type="text" class="form-control thongtin" id="" name="ngaySinh" value="<?php echo ($taiKhoan->NgaySinh); ?>">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -77,7 +77,7 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
                                     'Thái Nguyên'=>'Thái Nguyên', 'Thanh Hóa'=>'Thanh Hóa', 'Thừa Thiên - Huế'=>'Thừa Thiên - Huế', 'Tiền Giang'=>'Tiền Giang', 'Trà Vinh'=>'Trà Vinh',
                                     'Tuyên Quang'=>'Tuyên Quang', 'Vĩnh Long'=>'Vĩnh Long', 'Vĩnh Phúc'=>'Vĩnh Phúc', 'Yên Bái'=>'Yên Bái');
                                 ?>
-                                <select class="custom-select" required>
+                                <select class="custom-select" name="diaChiCuaTui" required>
                                     <?php foreach($diaChi as $id=>$value) { ?>
                                         <option value="<?php echo $id; ?>" <?php echo ($id ==  $taiKhoan->DiaChi) ? 'selected' : ''; ?>> <?php echo $value; ?> </option>
                                     <?php } ?>
@@ -88,41 +88,21 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-4 col-md-2"></div>
-                            <div class="col-sm-8 col-md-8">
-                                <label class="switch" for="checkbox" style="float: left;">
-                                    <input type="checkbox" id="checkbox" onclick="showpass()" />
-                                    <div class="slider round"></div>
-                                </label>
-                                <p style="margin: 4px 0px 0 65px;">Thay đổi mật khẩu</p>
+                            <label for="validationTooltip06" class="col-sm-4 col-md-2 col-form-label">Mật khẩu cũ</label>
+                            <div class="col-sm-8 col-md-6">
+                                <input type="password" class="form-control thongtin" id="passwordInputOld" name="passwordInputOld" required>
                             </div>
                         </div>
-
-                        <div id="password-group" class="password-group" style="display: none;">
-                            <div class="form-group row">
-                                <label for="validationTooltip06" class="col-sm-4 col-md-2 col-form-label">Mật khẩu cũ</label>
-                                <div class="col-sm-8 col-md-6">
-                                    <input type="password" class="form-control thongtin" id="passwordInputOld" name="passwordInputOld" placeholder="" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="validationTooltip07" class="col-sm-4 col-md-2 col-form-label">Mật khẩu mới</label>
-                                <div class="col-sm-8 col-md-6">
-                                    <input type="password" class="form-control thongtin" id="passwordInput" name="passwordInput" placeholder="" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="validationTooltip08" class="col-sm-4 col-md-2 col-form-label">Nhập lại mật khẩu</label>
-                                <div class="col-sm-8 col-md-6">
-                                    <input type="password" class="form-control thongtin" id="confirmPasswordInput" name="confirmPasswordInput" placeholder="" required>
-                                    <p><div class="" id="passwordStrength"></div></p>
-                                </div>
+                        <div class="form-group row">
+                            <label for="validationTooltip07" class="col-sm-4 col-md-2 col-form-label">Mật khẩu mới</label>
+                            <div class="col-sm-8 col-md-6">
+                                <input type="password" class="form-control thongtin" id="passwordInput" name="passwordInput" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-6">
-                                <button type="submit" class="btn">Cập Nhật Thông Tin</button>
+                                <button type="submit" id="btnSubmit" class="btn">Cập Nhật Thông Tin</button>
                             </div>
                         </div>
                     </form>
@@ -138,26 +118,26 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
                         </div>
                         <?php foreach ($lstDonDatHang as $donDatHang) { ?>
                             <div class="product">
-                            <div class="product-images">
-                                <?php echo $donDatHang['MaDonHang']; ?>
-                            </div>
-                            <div class="product-detailss">
-                                <div class="product-title">
-                                    <?php echo $donDatHang['NgayMua']; ?>
+                                <div class="product-images">
+                                    <?php echo $donDatHang['MaDonHang']; ?>
+                                </div>
+                                <div class="product-detailss">
+                                    <div class="product-title">
+                                        <?php echo $donDatHang['NgayMua']; ?>
+                                    </div>
+                                </div>
+                                <div class="product-prices">
+                                    <?php echo $donDatHang['TenHienThi']; ?>
+                                </div>
+                                <div class="product-quantitys">
+                                    <div>
+                                        <?php echo number_format($donDatHang['TongTien'], 0, ",", ","); ?>Đ
+                                    </div>
+                                </div>
+                                <div class="product-line-prices">
+                                    <?php echo $donDatHang['TinhTrang']; ?>
                                 </div>
                             </div>
-                            <div class="product-prices">
-                                <?php echo $donDatHang['TenHienThi']; ?>
-                            </div>
-                            <div class="product-quantitys">
-                                <div>
-                                    <?php echo number_format($donDatHang['TongTien'], 0, ",", ","); ?>Đ
-                                </div>
-                            </div>
-                            <div class="product-line-prices">
-                                <?php echo $donDatHang['TinhTrang']; ?>
-                            </div>
-                        </div>
                         <?php } ?>
                     </div>
                 </div>

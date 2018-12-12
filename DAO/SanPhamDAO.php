@@ -150,8 +150,7 @@ class SanPhamDAO extends DB
 
     public function GetSameType($maLoai, $maSanPham)
     {
-        //$sql = "SELECT MaSanPham, TenHienThi, HinhURL, concat(FORMAT(Gia, 0, 'de_DE'), 'Đ') as Gia  FROM sanpham where MaLoai = $maLoai and MaSanPham <> $maSanPham ORDER BY LuotXem DESC LIMIT 5";
-        $sql = "SELECT MaSanPham, TenHienThi, HinhURL, Gia  FROM sanpham WHERE MaLoai = $maLoai AND MaSanPham <> $maSanPham AND BiXoa = 0 ORDER BY LuotXem DESC LIMIT 5";
+        $sql = "SELECT MaSanPham, TenHienThi, HinhURL, Gia  FROM sanpham WHERE MaLoai = '$maLoai' AND MaSanPham <> '$maSanPham' AND BiXoa = 0 ORDER BY LuotXem DESC LIMIT 5";
         $result = $this->ExecuteQuery($sql);
         $lstSanPham = array();
         while($row = mysqli_fetch_array($result))
@@ -204,12 +203,12 @@ class SanPhamDAO extends DB
     }
 
     public function Update($sanPham){
-        $sql = "UPDATE sanpham SET TenSanPham = $sanPham->TenSanPham, Gia = $sanPham->Gia, HinhURL = $sanPham->HinhURL, NgayNhap = $sanPham->NgayNhap, SoLuongTon = $sanPham->SoLuongTon, SoLuongBan = $sanPham->SoLuongBan, LuotXem = $sanPham->LuotXem, MoTa = $sanPham->MoTa, XuatXu = $sanPham->XuatXu, MaHangSanXuat = $sanPham->MaHangSanXuat, MaLoai = $sanPham->MaLoai, TenHienThi = $sanPham->TenHienThi, BiXoa = $sanPham->BiXoa WHERE MaSanPham = $sanPham->MaSanPham";
+        $sql = "UPDATE sanpham SET TenSanPham = '$sanPham->TenSanPham', Gia = $sanPham->Gia, HinhURL = '$sanPham->HinhURL', NgayNhap = '$sanPham->NgayNhap', SoLuongTon = $sanPham->SoLuongTon, SoLuongBan = $sanPham->SoLuongBan, LuotXem = $sanPham->LuotXem, MoTa = '$sanPham->MoTa', XuatXu = '$sanPham->XuatXu', MaHangSanXuat = $sanPham->MaHangSanXuat, MaLoai = $sanPham->MaLoai, TenHienThi = '$sanPham->TenHienThi', BiXoa = $sanPham->BiXoa WHERE MaSanPham = $sanPham->MaSanPham";
         $this->ExecuteQuery($sql);
     }
 
     public function GetSoLuongBan($sanPham){
-        $sql = "SELECT SoLuongBan from sanpham WHERE MaSanPham = $sanPham->MaSanPham";
+        $sql = "SELECT SoLuongBan from sanpham WHERE MaSanPham = '$sanPham->MaSanPham'";
         $this->ExecuteQuery($sql);
     }
 }

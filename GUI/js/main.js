@@ -139,10 +139,83 @@ function showpass()
     }
 }
 
+$(document).ready(function() {
+    $('#username').blur(function(){
+        var username = $(this).val();
+
+        $.ajax({
+            url:'GUI/pages/signupValidate.php',
+            method:"POST",
+            data:{user_name:username},
+            success:function(data)
+            {
+                if(data != '0')
+                {
+                    $('#availability').html('<span class="text-danger">Tài khoản đã tồn tại</span>');
+                    $('#register').prop("disabled", true);
+                }
+                else
+                {
+                    $('#availability').html('<span class="text-success">Tài khoản hợp lệ</span>');
+                    $('#register').prop("disabled", false);
+                }
+            }
+        })
+    });
+});
+
+$('#password, #confirmPassword').on('keyup', function(){
+    if ($('#password').val() != '' && $('#confirmPassword').val() != '' && $('#password').val() == $('#confirmPassword').val())
+    {
+        $('#matchpwd').html('Mật khẩu trùng khớp').css('color', 'green');
+        $('#register').prop('disabled', false);
+    } else
+    {
+        $('#matchpwd').html('Mật khẩu không trùng khớp').css('color', 'red');
+        $('#register').prop('disabled', true);
+    }
+});
+
+$(document).ready(function(){
+    $("#captcha").blur(function () {
+        var captchaCode = $("#captcha").val();
+
+        if($.trim(captchaCode) == ''){
+            alert("Vui lòng nhập captcha");
+        }
+        else{
+            $.ajax({
+                dataType:'json',
+                url:'GUI/pages/exCaptcha.php',
+                method:'POST',
+                data:{captchacode:captchaCode},
+                success:function(result){
+                    if(!result.hasOwnProperty('error'))
+                    {
+                        alert("Kết quả trả về không phù hợp");
+                    }
+                    else if(result['error'] == 'success'){
+                        alert("Captcha hợp lệ");
+                        $('#register').attr("disabled", false);
+                    }
+                    else{
+                        if (result['captcha'] != '')
+                        {
+                            alert(result['captcha']);
+                            $('#register').attr("disabled", true);
+                        }
+                    }
+                }
+            });
+        }
+        return false;
+    });
+});
+
 $(document).ready(function(){
     $(".qty").change(function(){
         slm = $(this).val();
-        masp = $(this).attr("data-masp");
+        masp = $(this).prop("data-masp");
         $.ajax({
             url:"GUI/pages/exQty.php",
             type:"POST",
@@ -156,7 +229,7 @@ $(document).ready(function(){
 
 $(document).ready(function (){
    $(".myDelete").click(function(){
-        maSP = $(this).attr("data-sp");
+        maSP = $(this).prop("data-sp");
         $.ajax({
             url:"GUI/pages/exDel.php",
             type:"POST",

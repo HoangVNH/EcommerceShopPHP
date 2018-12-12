@@ -16,7 +16,7 @@ class TaiKhoanDAO extends DB
 
     public function Update($taiKhoan)
     {
-        $sql = "UPDATE taikhoan SET MatKhau = $taiKhoan->MatKhau, HoTen = $taiKhoan->HoTen, NgaySinh = $taiKhoan->NgaySinh, DiaChi = $taiKhoan->DiaChi WHERE MaTaiKhoan = $taiKhoan->MaTaiKhoan";
+        $sql = "UPDATE taikhoan SET MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi' WHERE MaTaiKhoan = '$taiKhoan->MaTaiKhoan'";
         $this->ExecuteQuery($sql);
     }
 
@@ -30,7 +30,7 @@ class TaiKhoanDAO extends DB
 
     public function VerifyAccount($tenDangNhap, $matKhau)
     {
-        $sql = "SELECT COUNT(MaTaiKhoan) FROM taikhoan WHERE TenDangNhap = '$tenDangNhap' AND MatKhau = $matKhau";
+        $sql = "SELECT COUNT(MaTaiKhoan) FROM taikhoan WHERE TenDangNhap = '$tenDangNhap' AND MatKhau = '$matKhau'";
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row[0];

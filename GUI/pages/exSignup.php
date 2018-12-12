@@ -8,6 +8,7 @@
 
 if (isset($_POST["register"]))
 {
+    unset($_SESSION['captcha_code']);
     $hoTen = $_POST["fullname"];
     $ngay = $_POST["day"];
     $thang = $_POST["month"];

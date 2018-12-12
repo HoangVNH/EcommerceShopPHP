@@ -96,12 +96,6 @@
 //} ?>
 
 <?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 08-Dec-18
- * Time: 10:53 PM
- */
 
 if (!isset($_SESSION))
     session_start();

@@ -27,7 +27,6 @@ if(!isset($_SESSION))
         </div>
         <div class="col-xs-12 col-sm-12 col-md-5">
             <div class="row quenmatkhau">
-                <i class="fa fa-chevron-circle-right"><a href="#"> Quên tên đăng nhập hoặc mật khẩu?</a></i>
                 <i class="fa fa-chevron-circle-right"><a href="?h=signup"> Chưa có tài khoản? Đăng ký ngay bây giờ.</a></i>
             </div>
         </div>

@@ -26,7 +26,7 @@ if(isset($_POST['btnSubmit']))
         if ($soLuong == 0)
         {
             echo "<script>alert('Tài khoản hoặc mật khẩu sai !!!')</script>";
-            echo "<script>window.open('signin.php','_self')</script>";
+            echo "<script>window.open('?h=signin','_self')</script>";
         }
         else{
             $loaiTaiKhoan = $taiKhoanBUS->CheckTypeAccount($tenDangNhap);

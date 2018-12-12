@@ -36,7 +36,7 @@
     <div class="row">
         <div class="col-xs-0 col-sm-0 col-md-2"></div>
         <div class="col-xs-12 col-sm-12 col-md-8">
-            <form action="?h=exSignup" method="POST" class="needs-validation" novalidate>
+            <form action="?h=exSignup" method="POST" class="needs-validation" id="mainform">
                 <h5>Thông Tin Cá Nhân</h5>
                 <div class="form-group row">
                     <label for="validationTooltip01" class="col-md-4 col-form-label text-right">Họ tên của bạn</label>
@@ -181,12 +181,14 @@
                 <div class="form-group row">
                     <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Mã kiểm tra <span style="color: red;">*</span></label>
                     <div class="col-md-5">
+                        <img src="GUI/pages/image.php" id="img-captcha"/>
+                        <input type="button" value="Tải lại" onclick="$('#img-captcha').attr('src', 'GUI/pages/image.php?rand=' + Math.random())" /> <br />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Nhập mã kiểm tra <span style="color: red;">*</span></label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control thongtin" id="captcha" name="captcha" />
+                        <input type="text" class="form-control thongtin" id="captcha" name="captcha" required/>
                         <div class="invalid-feedback">
                             Vui lòng nhập mã kiểm tra.
                         </div>
@@ -205,44 +207,3 @@
         <div class="col-xs-0 col-sm-0 col-md-2"></div>
     </div>
 </div>
-<!-- hết phần đăng ký -->
-
-<?php include_once("GUI/modules/footer.php"); ?>
-
-<script>
-    $(document).ready(function() {
-        $('#username').blur(function(){
-            var username = $(this).val();
-
-            $.ajax({
-                url:'GUI/pages/signupValidate.php',
-                method:"POST",
-                data:{user_name:username},
-                success:function(data)
-                {
-                    if(data != '0')
-                    {
-                        $('#availability').html('<span class="text-danger">Tài khoản đã tồn tại</span>');
-                        $('#register').attr("disabled", true);
-                    }
-                    else
-                    {
-                        $('#availability').html('<span class="text-success">Tài khoản hợp lệ</span>');
-                        $('#register').attr("disabled", false);
-                    }
-                }
-            })
-        });
-    });
-    $('#password, #confirmPassword').on('keyup', function(){
-        if ($('#password').val() != '' && $('#confirmPassword').val() != '' && $('#password').val() == $('#confirmPassword').val())
-        {
-            $('#matchpwd').html('Mật khẩu trùng khớp').css('color', 'green');
-            $('#register').prop('disabled', false);
-        } else
-        {
-            $('#matchpwd').html('Mật khẩu không trùng khớp').css('color', 'red');
-            $('#register').prop('disabled', true);
-        }
-    });
-</script>

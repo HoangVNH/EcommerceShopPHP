@@ -2,12 +2,6 @@
 if(!isset($_SESSION))
     session_start();
 
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 06-Dec-18
- * Time: 10:54 PM
- */
 if(isset($_GET['id']) && is_numeric($_GET['id'])){
     $maSanPham = $_GET['id'];
 

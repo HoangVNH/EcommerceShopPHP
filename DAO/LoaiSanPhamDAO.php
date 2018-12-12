@@ -65,7 +65,7 @@ class LoaiSanPhamDAO extends DB
     }
 
     public function Update($loaiSanPham){
-        $sql = "UPDATE loaisanpham SET TenLoai = $loaiSanPham->TenLoai, BiXoa = $loaiSanPham->BiXoa WHERE MaLoai = $loaiSanPham->MaLoai";
+        $sql = "UPDATE loaisanpham SET TenLoai = '$loaiSanPham->TenLoai', BiXoa = $loaiSanPham->BiXoa WHERE MaLoai = $loaiSanPham->MaLoai";
         $this->ExecuteQuery($sql);
     }
 

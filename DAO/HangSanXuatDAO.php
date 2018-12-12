@@ -90,7 +90,7 @@ class HangSanXuatDAO extends DB
     }
 
     public function Update($hangSanXuat){
-        $sql = "UPDATE hangsanxuat SET TenHangSanXuat = $hangSanXuat->TenHangSanXuat, LogoURL = $hangSanXuat->LogoURL, BiXoa = $hangSanXuat->BiXoa WHERE MaHangSanXuat = $hangSanXuat->MaHangSanXuat";
+        $sql = "UPDATE hangsanxuat SET TenHangSanXuat = '$hangSanXuat->TenHangSanXuat', LogoURL = '$hangSanXuat->LogoURL', BiXoa = $hangSanXuat->BiXoa WHERE MaHangSanXuat = $hangSanXuat->MaHangSanXuat";
         $this->ExecuteQuery($sql);
     }
 

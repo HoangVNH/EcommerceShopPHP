@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 07-Dec-18
- * Time: 1:05 AM
- */
-?>
-
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 dangky-header">

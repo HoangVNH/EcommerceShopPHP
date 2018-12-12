@@ -63,6 +63,7 @@
 .btn{
     background: rgba(0,0,0,0.8);
 }
+
 button#button-addon2.btn{
     padding: 10px 20px;
 }
@@ -752,54 +753,6 @@ label.col-sm-2.col-form-label{
 /* phần thông tin tài khoản */
 a.nav-item.nav-link{
     color: #333;
-}
-.switch {
-    display: inline-block;
-    height: 30px;
-    position: relative;
-    width: 55px;
-}
-
-.switch input {
-    display:none;
-}
-
-.slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-    }
-
-.slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 21px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 21px;
-}
-
-input:checked + .slider {
-    background-color: #66bb6a;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
 /* hết phần thông tin tài khoản */
 

@@ -25,19 +25,24 @@ class SanPhamBUS
         return $this->sanPhamDAO->GetBestSellers();
     }
 
-    public function GetOnCategory($cat)
+    public function GetAll()
     {
-        return $this->sanPhamDAO->GetOnCategory($cat);
+        return $this->sanPhamDAO->GetAll();
     }
 
-    public function GetSearch($q)
+    public function GetAllAvailable()
     {
-        return $this->sanPhamDAO->GetSearch($q);
+        return $this->sanPhamDAO->GetAllAvailable();
     }
 
     public function GetOnBrand($id, $br)
     {
         return $this->sanPhamDAO->GetOnBrand($id, $br);
+    }
+
+    public function GetOnCategory($cat)
+    {
+        return $this->sanPhamDAO->GetOnCategory($cat);
     }
 
     public function GetDetail($id)
@@ -50,7 +55,40 @@ class SanPhamBUS
         return $this->sanPhamDAO->GetSameType($maLoai, $maSanPham);
     }
 
+    public function GetSearch($q)
+    {
+        return $this->sanPhamDAO->GetSearch($q);
+    }
+
+    public function Insert($sanPham){
+        $this->sanPhamDAO->Insert($sanPham);
+    }
+
+    public function Delete($sanPham){
+        $this->sanPhamDAO->Delete($sanPham);
+    }
+
+    public function SetDelete($sanPham){
+        $this->sanPhamDAO->SetDelete($sanPham);
+    }
+
+    public function UnsetDelete($sanPham){
+        $this->sanPhamDAO->UnsetDelete($sanPham);
+    }
+
+    public function Update($sanPham){
+        $this->sanPhamDAO->Update($sanPham);
+    }
+
     public function GetSoLuongBan($sanPham){
         return $this->sanPhamDAO->GetSoLuongBan($sanPham);
+    }
+
+    public function UpdateSoLuongBan($maSanPham, $soLuong){
+        $this->sanPhamDAO->UpdateSoLuongBan($maSanPham, $soLuong);
+    }
+
+    public function UpdateViews($sanPham){
+        $this->sanPhamDAO->UpdateViews($sanPham);
     }
 }

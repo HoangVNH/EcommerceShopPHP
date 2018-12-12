@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 06-Dec-18
- * Time: 7:16 PM
- */
-?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 col-lg-12">
@@ -104,6 +96,6 @@
                 </div>');
         }
     ?>
-</div>
+    </div>
 </div>
 

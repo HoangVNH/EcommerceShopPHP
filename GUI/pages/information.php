@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 07-Dec-18
- * Time: 9:07 PM
- */
 
 if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
 {

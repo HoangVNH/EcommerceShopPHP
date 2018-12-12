@@ -55,4 +55,8 @@ class LoaiSanPhamBUS
         $loaiSanPham->TenLoai = $tenLoai;
         $this->loaiSanPhamDAO->Update($loaiSanPham);
     }
+
+    public function CountProductsBasedOnCategory($maLoaiSanPham){
+        return $this->loaiSanPhamDAO->CountProductsBasedOnCategory($maLoaiSanPham);
+    }
 }

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 07-Dec-18
- * Time: 1:43 AM
- */
+
 if(!isset($_SESSION))
     session_start();
 
@@ -47,7 +42,3 @@ if(isset($_POST['btnSubmit']))
     }
 };
 ?>
-
-
-
-

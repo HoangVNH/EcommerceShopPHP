@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 07-Dec-18
- * Time: 1:11 AM
- */
 
 if (isset($_POST["register"]))
 {
@@ -32,4 +26,5 @@ if (isset($_POST["register"]))
 
     echo "<script type=\"text/javascript\">"."alert('Tạo tài khoản thành công');"."location.href=\"index.php\";"."</script>";
 }
+
 ?>

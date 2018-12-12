@@ -12,6 +12,8 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
 
     $hangSX = new HangSanXuatBUS();
     $tenHangSX = $hangSX->GetName($sanPham->MaHangSanXuat);
+
+    $sP->UpdateViews($maSanPham);
 }
 ?>
 

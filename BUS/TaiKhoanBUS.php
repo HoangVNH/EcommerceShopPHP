@@ -30,7 +30,7 @@ class TaiKhoanBUS
         return $this->taiKhoanDAO->CheckTypeAccount($tenDangNhap);
     }
 
-    public  function VerifyAccount($tenDangNhap, $matKhau)
+    public function VerifyAccount($tenDangNhap, $matKhau)
     {
         return $this->taiKhoanDAO->VerifyAccount($tenDangNhap, $matKhau);
     }

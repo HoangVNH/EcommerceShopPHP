@@ -208,7 +208,18 @@ class SanPhamDAO extends DB
     }
 
     public function GetSoLuongBan($sanPham){
-        $sql = "SELECT SoLuongBan from sanpham WHERE MaSanPham = '$sanPham->MaSanPham'";
+        $sql = "SELECT SoLuongBan from sanpham WHERE MaSanPham = $sanPham->MaSanPham";
         $this->ExecuteQuery($sql);
     }
+
+    public function UpdateSoLuongBan($maSanPham, $soLuong){
+        $sql = "UPDATE sanpham SET SoLuongBan = SoLuongBan + $soLuong WHERE MaSanPham = $maSanPham";
+        $this->ExecuteQuery($sql);
+    }
+
+    public function UpdateViews($maSanPham){
+        $sql = "UPDATE sanpham SET LuotXem = LuotXem + 1 WHERE MaSanPham = $maSanPham";
+        $this->ExecuteQuery($sql);
+    }
+
 }

@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 06-Dec-18
- * Time: 4:56 PM
- */
-?>
-
 <!-- slide -->
 <div class="container-fluid">
     <div class="row">

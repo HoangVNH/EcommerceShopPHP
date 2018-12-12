@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 07-Dec-18
- * Time: 9:07 PM
- */
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -27,6 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     'SoLuong' => $value['SoLuong'],
                     'GiaSanPham' => $value['Gia']
                 ];
+
+            $sanPham = new SanPhamBUS();
+            $sanPham->UpdateSoLuongBan($key, $value['SoLuong']);
 
             $chiTietDonDatHang = new ChiTietDonDatHangBUS();
             $idCTDDH = $chiTietDonDatHang->Insert($data2);

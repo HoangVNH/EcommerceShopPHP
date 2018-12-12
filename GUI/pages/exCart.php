@@ -22,3 +22,5 @@ if (!isset($_SESSION['GioHang'][$maSanPham])){
     $_SESSION['GioHang'][$maSanPham]['SoLuong'] += 1;
 }
 echo "<script>alert('Thêm vào giỏ thành công');location.href='?h=cart'</script>";
+
+?>

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 11-Dec-18
- * Time: 5:54 PM
- */
 
 if (!isset($_SESSION))
     session_start();
@@ -25,3 +19,4 @@ $taiKhoanBUS->Update($taiKhoan);
 
 echo "<script>alert('Cập nhật thông tin thành công !')</script>";
 echo "<script>window.open('?h=information','_self')</script>";
+?>

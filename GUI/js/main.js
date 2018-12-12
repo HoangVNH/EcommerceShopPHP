@@ -122,23 +122,7 @@ $(function () {
 
 });
 
-var showpassword = true;
-function showpass()
-{
-    if(showpassword == true)
-    {
-        document.getElementById("password-group").style.display = 'block';
-        showpassword = false;
-        return;
-    }
-    else if(showpassword == false)
-    {
-        document.getElementById("password-group").style.display = 'none';
-        showpassword = true;
-        return;
-    }
-}
-
+// Kiểm tra tên đăng nhập đã có trong database chưa ? thông báo màn hình "tên đăng nhập đã tồn tại" : thông báo và bỏ disabled ở nút Đăng ký
 $(document).ready(function() {
     $('#username').blur(function(){
         var username = $(this).val();
@@ -151,12 +135,12 @@ $(document).ready(function() {
             {
                 if(data != '0')
                 {
-                    $('#availability').html('<span class="text-danger">Tài khoản đã tồn tại</span>');
+                    $('#availability').html('<span class="text-danger">Tên đăng nhập đã tồn tại</span>');
                     $('#register').prop("disabled", true);
                 }
                 else
                 {
-                    $('#availability').html('<span class="text-success">Tài khoản hợp lệ</span>');
+                    $('#availability').html('<span class="text-success">Tên đăng nhập hợp lệ</span>');
                     $('#register').prop("disabled", false);
                 }
             }
@@ -164,6 +148,7 @@ $(document).ready(function() {
     });
 });
 
+// So sánh mật khẩu và mật khẩu nhập lại ở trang đăng ký nếu không trùng khớp sẽ diasabled nút Đăng ký
 $('#password, #confirmPassword').on('keyup', function(){
     if ($('#password').val() != '' && $('#confirmPassword').val() != '' && $('#password').val() == $('#confirmPassword').val())
     {
@@ -176,6 +161,7 @@ $('#password, #confirmPassword').on('keyup', function(){
     }
 });
 
+// Kiểm tra Captcha bằng Ajax
 $(document).ready(function(){
     $("#captcha").blur(function () {
         var captchaCode = $("#captcha").val();
@@ -212,31 +198,34 @@ $(document).ready(function(){
     });
 });
 
+// thay đổi số lượng sản phẩm = Ajax ở trang cart.php
 $(document).ready(function(){
     $(".qty").change(function(){
         slm = $(this).val();
-        masp = $(this).prop("data-masp");
+        masp = $(this).attr("data-masp");
         $.ajax({
             url:"GUI/pages/exQty.php",
             type:"POST",
             data:"slm="+slm+"&masp="+masp,
             success:function(){
-                location.reload();
+                location.reload("#sp" + masp);
             }
         });
     });
 });
 
+// Xoá sản phẩm = Ajax ở trang cart.php
 $(document).ready(function (){
    $(".myDelete").click(function(){
-        maSP = $(this).prop("data-sp");
+        maSP = $(this).attr("data-sp");
         $.ajax({
             url:"GUI/pages/exDel.php",
             type:"POST",
             data:"id="+maSP,
             success:function () {
-                location.reload();
+                $("#sp" + maSP).remove();
             }
         });
+
    });
 });

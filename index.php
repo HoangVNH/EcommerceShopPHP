@@ -41,7 +41,5 @@ if(!isset($_SESSION))
     ?>
 
     <?php include_once("GUI/modules/footer.php"); ?>
-
-
-
-
+</body>
+</html>

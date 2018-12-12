@@ -15,6 +15,14 @@ class HangSanXuatBUS
         $this->hangSanXuatDAO = new HangSanXuatDAO();
     }
 
+    public function GetAll(){
+        return $this->hangSanXuatDAO->GetAll();
+    }
+
+    public function GetAllAvailable(){
+        return $this->hangSanXuatDAO->GetAllAvailable();
+    }
+
     public function GetLogo($cat)
     {
         return $this->hangSanXuatDAO->GetLogo($cat);
@@ -56,5 +64,9 @@ class HangSanXuatBUS
         $hangSanXuat = new HangSanXuat();
         $hangSanXuat->TenHangSanXuat = $tenHang;
         $this->hangSanXuatDAO->Update($hangSanXuat);
+    }
+
+    public function CountProductsBasedOnBrand($maHangSanXuat){
+        return $this->hangSanXuatDAO->CountProductsBasedOnBrand($maHangSanXuat);
     }
 }

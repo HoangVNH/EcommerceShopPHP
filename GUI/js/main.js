@@ -161,42 +161,42 @@ $('#password, #confirmPassword').on('keyup', function(){
     }
 });
 
-// Kiểm tra Captcha bằng Ajax
-$(document).ready(function(){
-    $("#captcha").blur(function () {
-        var captchaCode = $("#captcha").val();
-
-        if($.trim(captchaCode) == ''){
-            alert("Vui lòng nhập captcha");
-        }
-        else{
-            $.ajax({
-                dataType:'json',
-                url:'GUI/pages/exCaptcha.php',
-                method:'POST',
-                data:{captchacode:captchaCode},
-                success:function(result){
-                    if(!result.hasOwnProperty('error'))
-                    {
-                        alert("Kết quả trả về không phù hợp");
-                    }
-                    else if(result['error'] == 'success'){
-                        alert("Captcha hợp lệ");
-                        $('#register').attr("disabled", false);
-                    }
-                    else{
-                        if (result['captcha'] != '')
-                        {
-                            alert(result['captcha']);
-                            $('#register').attr("disabled", true);
-                        }
-                    }
-                }
-            });
-        }
-        return false;
-    });
-});
+// // Kiểm tra Captcha bằng Ajax
+// $(document).ready(function(){
+//     $("#captcha").blur(function () {
+//         var captchaCode = $("#captcha").val();
+//
+//         if($.trim(captchaCode) == ''){
+//             alert("Vui lòng nhập captcha");
+//         }
+//         else{
+//             $.ajax({
+//                 dataType:'json',
+//                 url:'?a=111',
+//                 method:'POST',
+//                 data:{captchacode:captchaCode},
+//                 success:function(result){
+//                     if(!result.hasOwnProperty('error'))
+//                     {
+//                         alert("Kết quả trả về không phù hợp");
+//                     }
+//                     else if(result['error'] == 'success'){
+//                         alert("Captcha hợp lệ");
+//                         $('#register').attr("disabled", false);
+//                     }
+//                     else{
+//                         if (result['captcha'] != '')
+//                         {
+//                             alert(result['captcha']);
+//                             $('#register').attr("disabled", true);
+//                         }
+//                     }
+//                 }
+//             });
+//         }
+//         return false;
+//     });
+// });
 
 // thay đổi số lượng sản phẩm = Ajax ở trang cart.php
 $(document).ready(function(){
@@ -204,7 +204,8 @@ $(document).ready(function(){
         slm = $(this).val();
         masp = $(this).attr("data-masp");
         $.ajax({
-            url:"GUI/pages/exQty.php",
+            // url:"GUI/pages/exQty.php",
+            url:"?a=109",
             type:"POST",
             data:"slm="+slm+"&masp="+masp,
             success:function(){
@@ -219,7 +220,7 @@ $(document).ready(function (){
    $(".myDelete").click(function(){
         maSP = $(this).attr("data-sp");
         $.ajax({
-            url:"GUI/pages/exDel.php",
+            url:"?a=110",
             type:"POST",
             data:"id="+maSP,
             success:function () {

@@ -21,7 +21,7 @@ if(isset($_POST['btnSubmit']))
         if ($soLuong == 0)
         {
             echo "<script>alert('Tài khoản hoặc mật khẩu sai !!!')</script>";
-            echo "<script>window.open('?h=signin','_self')</script>";
+            echo "<script>window.open('?a=6','_self')</script>";
         }
         else{
             $loaiTaiKhoan = $taiKhoanBUS->CheckTypeAccount($tenDangNhap);
@@ -31,6 +31,7 @@ if(isset($_POST['btnSubmit']))
                 $_SESSION['MaTaiKhoan'] = $taiKhoanBUS->GetID($tenDangNhap);
                 echo "<script>alert('Đăng Nhập Thành Công')</script>";
                 echo "<script>window.open('index.php','_self')</script>";
+//                echo "<script>location.href='index.php'</script>";
             }
             else
             {

@@ -51,7 +51,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
                     echo '<p class="vote">Hãng sản xuất: ' . $tenHangSX . '</p>';
                     ?>
                     <div class="action">
-                        <a href="?h=exCart&id=<?php echo $sanPham->MaSanPham ?>"><button class="add-to-cart btn btn-default">Mua Ngay <i class="fa fa-shopping-cart"></i></button></a>
+                        <a href="index.php?a=105&id=<?php echo $sanPham->MaSanPham ?>"><button class="add-to-cart btn btn-default">Mua Ngay <i class="fa fa-shopping-cart"></i></button></a>
                     </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
                 foreach($lstSanPham as $sanPham)
                 {
                     echo('<div class="recommend-product-item">
-                            <a href="?h=details&id=' . $sanPham->MaSanPham . '">
+                            <a href="?a=4&id=' . $sanPham->MaSanPham . '">
                                 <div class="thumbnail effect">
                                 <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                                 <div class="productname">' . $sanPham->TenHienThi . '</div>

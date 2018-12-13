@@ -53,12 +53,12 @@
     <h3 class="title text-left SPBanChay">SẢN PHẨM MỚI NHẤT</h3>
     <div class="row">
         <?php
-            $sanPhamBUS = new SanPhamBUS();
-            $lstSanPham = $sanPhamBUS->GetBestSellers();
-            foreach($lstSanPham as $sanPham){
-                echo ('
+        $sanPhamBUS = new SanPhamBUS();
+        $lstSanPham = $sanPhamBUS->GetBestSellers();
+        foreach($lstSanPham as $sanPham){
+            echo ('
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                <a href="?h=details&id=' . $sanPham->MaSanPham . '">
+                <a href="?a=4&id=' . $sanPham->MaSanPham . '">
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>
@@ -66,7 +66,7 @@
                 </div>
                 </a>
             </div>');
-            }
+        }
         ?>
     </div>
 </div>
@@ -90,7 +90,7 @@
         foreach($lstSanPham as $sanPham){
             echo ('
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                <a href="?h=details&id=' . $sanPham->MaSanPham . '">
+                <a href="?a=4&id=' . $sanPham->MaSanPham . '">
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>

@@ -18,5 +18,5 @@ $taiKhoan->MatKhau = (isset($_POST['passwordInputOld']) && isset($_POST['passwor
 $taiKhoanBUS->Update($taiKhoan);
 
 echo "<script>alert('Cập nhật thông tin thành công !')</script>";
-echo "<script>window.open('?h=information','_self')</script>";
+echo "<script>window.open('?a=13','_self')</script>";
 ?>

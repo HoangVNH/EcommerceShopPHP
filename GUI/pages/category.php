@@ -58,7 +58,7 @@
                         $hangSanXuat = new HangSanXuatBUS();
                         $lstLogo = $hangSanXuat->GetLogo($cat);
                         foreach($lstLogo as $hangSanXuat){
-                            echo ('<a href="?h=brand&id=' . $cat . '&br=' . $hangSanXuat->MaHangSanXuat . '"><img src="' . $hangSanXuat->LogoURL . '"/></a>');
+                            echo ('<a href="?a=3&id=' . $cat . '&br=' . $hangSanXuat->MaHangSanXuat . '"><img src="' . $hangSanXuat->LogoURL . '"/></a>');
                         }
                     }
                 ?>
@@ -75,7 +75,6 @@
     </div>
 </div>
 
-<!--Kết quả -->
 <div class="container">
     <h3 class="title text-left SPBanChay">Sản phẩm nổi bật</h3>
     <div class="row">
@@ -86,7 +85,7 @@
         {
             echo ('
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                <a href="?h=details&id=' . $sanPham->MaSanPham . '">
+                <a href="index.php?a=4&id=' . $sanPham->MaSanPham . '">
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" alt="" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>

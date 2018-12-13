@@ -41,16 +41,3 @@ class Captcha
     }
 }
 
-//if (!isset($_SESSION))
-//    session_start();
-//
-//$str = md5(microtime());                // lấy chuỗi rồi mã hoá md5
-//$str = substr($str, 0, 6);  // lấy 6 kí tự
-//$_SESSION['captcha_code'] = $str;
-//$img = imagecreatefromjpeg("GUI/img/bg_catpcha.jpg");       // tạo hình từ file bg_captcha.jpg
-//$color = imagecolorallocate($img, 245, 243, 245);   // tạo màu cho chữ
-//imagestring($img, 3, 4, 5, $str, $color);                // viết chuỗi vào ảnh
-//header("Content-type: image/jpeg");                          // xuất định dạng là hình ảnh
-//imagejpeg($img);
-//imagedestroy($img);
-

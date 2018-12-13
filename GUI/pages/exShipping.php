@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         unset($_SESSION['GioHang']);
         unset($_SESSION['TongTien']);
-        echo "<script>location.href='?h=success'</script>";
+        echo "<script>location.href='?a=112'</script>";
     }
 }
 
@@ -97,4 +97,3 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
         </div>
     </div>
 </div>
-<!-- end infomation -->

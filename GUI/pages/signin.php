@@ -7,7 +7,7 @@ if(!isset($_SESSION))
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-5 sign_in">
             <h5>Đăng Nhập</h5>
-            <form action="?h=exSignin" class="needs-validation" method="POST" novalidate>
+            <form action="?a=106" class="needs-validation" method="POST" novalidate>
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" id="username" placeholder="Tên Đăng Nhập" required>
                     <div class="invalid-feedback">
@@ -27,7 +27,7 @@ if(!isset($_SESSION))
         </div>
         <div class="col-xs-12 col-sm-12 col-md-5">
             <div class="row quenmatkhau">
-                <i class="fa fa-chevron-circle-right"><a href="?h=signup"> Chưa có tài khoản? Đăng ký ngay bây giờ.</a></i>
+                <i class="fa fa-chevron-circle-right"><a href="?a=7"> Chưa có tài khoản? Đăng ký ngay bây giờ.</a></i>
             </div>
         </div>
     </div>

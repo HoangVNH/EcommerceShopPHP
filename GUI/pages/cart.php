@@ -69,7 +69,7 @@ if (isset($_SESSION['MaTaiKhoan'])) {
                                     $_SESSION['TongTien'] = $tongTien; ?>Đ</div>
                             </div>
                         </div>
-                        <a href="?h=exShipping">
+                        <a href="?a=111">
                             <button type="submit" class="checkout">Tiến hành đặt hàng</button>
                         </a>
                     </div>
@@ -99,9 +99,9 @@ if (isset($_SESSION['MaTaiKhoan'])) {
                 </div>
             </div>
         </div>
-        <div align="center"><a class="btn btn-primary" href="index.php" role="button">Tiếp tục mua sắm</a></div>
+        <div align="center"><a class="btn btn-primary" href="?a=1" role="button">Tiếp tục mua sắm</a></div>
     <?php }
 } else {
-    echo "<script>alert('Bạn phải đăng nhập mới có thể sử dụng chức năng này');location.href='?h=signin'</script>";
+    echo "<script>alert('Bạn phải đăng nhập mới có thể sử dụng chức năng này');location.href='?a=6'</script>";
 } ?>
 

@@ -23,7 +23,9 @@
         <div class="quanlytaikhoan">
             <h3>SỬA THÔNG TIN TÀI KHOẢN</h3>
         </div>
+
         <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="?a=103" enctype="multipart/form-data" role="form">
+            <input type="hidden" name="ex" value="edit" />
             <div class="form-group">
                 <label for="type_product" class="col-sm-3 control-label">Mã tài khoản <span style="color: red">*</span></label>
                 <div class="col-sm-9">

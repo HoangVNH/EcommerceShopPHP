@@ -46,7 +46,7 @@
             include("themTaiKhoan.php");
             break;
         case 103:
-            include("exSuaTaiKhoan.php");
+            include("exTaiKhoan.php");
             break;
         case 105:
             include("exXoaTaiKhoan.php");

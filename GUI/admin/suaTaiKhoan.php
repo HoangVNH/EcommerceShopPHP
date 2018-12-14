@@ -29,13 +29,13 @@
             <div class="form-group">
                 <label for="type_product" class="col-sm-3 control-label">Mã tài khoản <span style="color: red">*</span></label>
                 <div class="col-sm-9">
-                    <input name="mtk" type="text" class="form-control" value="<?php echo $maTaiKhoan ?>" required maxlength="30">
+                    <input name="mtk" readonly type="text" class="form-control" value="<?php echo $maTaiKhoan ?>" required maxlength="30">
                 </div>
             </div>
             <div class="form-group">
                 <label for="masp" class="col-sm-3 control-label">Tên đăng nhập <span style="color: red">*</span></label>
                 <div class="col-sm-9">
-                    <input name="tdn" type="text" class="form-control" value="<?php echo $taiKhoan->TenDangNhap ?>" required maxlength="40">
+                    <input name="tdn" readonly type="text" class="form-control" value="<?php echo $taiKhoan->TenDangNhap ?>" required maxlength="40">
                 </div>
             </div>
             <div class="form-group">

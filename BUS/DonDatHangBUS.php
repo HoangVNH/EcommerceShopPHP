@@ -33,4 +33,24 @@ class DonDatHangBUS
         return $this->donDatHangDAO->GetNumRows();
     }
 
+    public function GetAll(){
+        return $this->donDatHangDAO->GetAll();
+    }
+
+    public function Update($donDatHang){
+        $this->donDatHangDAO->Update($donDatHang);
+    }
+
+    public function GetOrderById($maDonhang){
+        return $this->donDatHangDAO->GetOrderById($maDonhang);
+    }
+
+    public function SetDeleted($maDonHang){
+        $this->donDatHangDAO->SetDeleted($maDonHang);
+    }
+
+    public function UnsetDeleted($maDonHang){
+        $this->donDatHangDAO->UnsetDeleted($maDonHang);
+    }
+
 }

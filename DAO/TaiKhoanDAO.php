@@ -69,6 +69,8 @@ class TaiKhoanDAO extends DB
     public function GetInfoByID($maTaiKhoan){
         $sql = "SELECT MaTaiKhoan, TenDangNhap, MatKhau, HoTen, NgaySinh, DiaChi, LoaiTaiKhoan, BiXoa FROM taikhoan WHERE MaTaiKhoan = $maTaiKhoan";
         $result = $this->ExecuteQuery($sql);
+        if ($result == null)
+            return null;
         $row = mysqli_fetch_array($result);
         return $row;
     }
@@ -137,5 +139,17 @@ class TaiKhoanDAO extends DB
         $row = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($row);
         return $row[0];
+    }
+
+    public function GetAllID(){
+        $sql = "SELECT MaTaiKhoan FROM taikhoan WHERE BiXoa <> 1";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            return null;
+        $lstID = array();
+        while ($row = mysqli_fetch_array($result))
+            $lstID[] = $row[0];
+
+        return $lstID;
     }
 }

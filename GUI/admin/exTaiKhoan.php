@@ -8,7 +8,6 @@
         $taiKhoan->MaTaiKhoan = $_POST['mtk'];
 
         $info = $taiKhoanBUS->GetInfoByID($taiKhoan->MaTaiKhoan);
-        $taiKhoan->TenDangNhap = isset($_POST['tdn']) ? $_POST['tdn'] : $info['TenDangNhap'];
         $taiKhoan->MatKhau = (isset($_POST['oldpwd']) && isset($_POST['newpwd'])) ? $_POST['newpwd'] : $_POST['oldpwd'];
         $taiKhoan->HoTen = isset($_POST['hoten']) ? $_POST['hoten'] : $info['HoTen'];
         $taiKhoan->NgaySinh = isset($_POST['ngaysinh']) ? $_POST['ngaysinh'] : $info['NgaySinh'];

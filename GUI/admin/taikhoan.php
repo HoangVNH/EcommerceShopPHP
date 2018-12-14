@@ -19,15 +19,15 @@
             <thead>
             <tr>
                 <th>STT</th>
-                <th>Mã Tài Khoản</th>
-                <th>Tên Đăng Nhập</th>
-                <th>Mật Khẩu</th>
-                <th>Họ Và Tên</th>
-                <th>Ngày Sinh</th>
-                <th>Địa Chỉ</th>
+                <th>Mã tài khoản</th>
+                <th>Tên đăng nhập</th>
+                <th>Mật khẩu</th>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Địa chỉ</th>
                 <th>Loại tài khoản</th>
                 <th>Bị xoá</th>
-                <th>Tác Vụ</th>
+                <th>Tác vụ</th>
             </tr>
             </thead>
             <!-- phần boby -->

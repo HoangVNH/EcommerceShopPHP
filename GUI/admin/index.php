@@ -45,11 +45,23 @@
         case 4:
             include("themTaiKhoan.php");
             break;
+        case 5:
+            include("dondathang.php");
+            break;
+        case 6:
+            include("suaDonDatHang.php");
+            break;
         case 103:
             include("exTaiKhoan.php");
             break;
-        case 105:
+        case 104:
             include("exXoaTaiKhoan.php");
+            break;
+        case 105:
+            include("exXoaDonHang.php");
+            break;
+        case 106:
+            include("exDonDatHang.php");
             break;
     }
         ?>

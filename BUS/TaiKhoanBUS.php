@@ -82,4 +82,8 @@ class TaiKhoanBUS
     public function CheckIsDeleted($tenDangNhap){
         return $this->taiKhoanDAO->CheckIsDeleted($tenDangNhap);
     }
+
+    public function GetAllID(){
+        return $this->taiKhoanDAO->GetAllID();
+    }
 }

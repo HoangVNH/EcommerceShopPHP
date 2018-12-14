@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li class="list-group-item">
-                <a href="oder.html">
+                <a href="?a=5">
                     <i class="fa fa-cubes"></i> <span> Đơn Đặt Hàng</span>
                 </a>
             </li>

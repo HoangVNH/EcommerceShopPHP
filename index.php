@@ -92,7 +92,6 @@ if(!isset($_SESSION))
             default:
                 include("GUI/pages/pError.php");
                 break;
-
         }
     ?>
 

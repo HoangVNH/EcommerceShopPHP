@@ -16,7 +16,7 @@ class DonDatHang
 
     public function __construct()
     {
-        $this->MaDonHang = 0;
+        $this->MaDonHang = "";
         $this->NgayMua = "";
         $this->TongTien = 0;
         $this->MaTaiKhoan = 0;

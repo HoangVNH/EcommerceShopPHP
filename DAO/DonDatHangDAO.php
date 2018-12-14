@@ -8,24 +8,10 @@
 
 class DonDatHangDAO extends DB
 {
-    public function Insert($data)
+    public function Insert($donDatHang)
     {
-        $sql = "INSERT INTO dondathang";
-        $columns = implode(',', array_keys($data));
-        $values = "";
-        $sql .= '(' .$columns . ')';
-        foreach ($data as $field=>$value)
-        {
-            if(is_string($value))
-                $values .= "'".$value . "',";
-            else
-                $values .=  $value . ',';
-        }
-        $mysqli = new mysqli("localhost", "root", "", "1660214_1660359_1660656_quanlysanpham");
-        $values = substr($values, 0 , -1);
-        $sql .= " VALUES (" . $values . ')';
-        $mysqli->query($sql);
-        return $mysqli->insert_id;
+        $sql = "INSERT INTO dondathang(MaDonHang, TongTien, MaTaiKhoan) VALUES('$donDatHang->MaDonHang', $donDatHang->TongTien, $donDatHang->MaTaiKhoan)";
+        $this->ExecuteQuery($sql);
     }
 
     public function GetAllById($maTaiKhoan)
@@ -34,10 +20,24 @@ class DonDatHangDAO extends DB
         $result = $this->ExecuteQuery($sql);
         $lstDonDatHang = array();
         while($row = mysqli_fetch_array($result))
-        {
             $lstDonDatHang[] = $row;
-        }
 
         return $lstDonDatHang;
+    }
+
+    public function GetMaDonHang(){
+        $sql = "SELECT MaDonHang FROM dondathang WHERE BiXoa <> 1";
+        $result = $this->ExecuteQuery($sql);
+        $lstDonDatHang = array();
+        while($row = mysqli_fetch_array($result))
+            $lstDonDatHang[] = $row;
+
+        return $lstDonDatHang;
+    }
+
+    public function GetNumRows(){
+        $sql = "SELECT MaDonHang FROM dondathang WHERE BiXoa <> 1";
+        $result = $this->ExecuteQuery($sql);
+        return mysqli_num_rows($result);
     }
 }

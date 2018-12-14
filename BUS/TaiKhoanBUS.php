@@ -25,6 +25,11 @@ class TaiKhoanBUS
         $this->taiKhoanDAO->Update($taiKhoan);
     }
 
+    public function UpdateByAdmin($taiKhoan)
+    {
+        $this->taiKhoanDAO->UpdateByAdmin($taiKhoan);
+    }
+
     public function CheckTypeAccount($tenDangNhap)
     {
         return $this->taiKhoanDAO->CheckTypeAccount($tenDangNhap);
@@ -56,5 +61,25 @@ class TaiKhoanBUS
 
     public function GetPasswordByID($maTaiKhoan){
         return $this->taiKhoanDAO->GetPasswordByID($maTaiKhoan);
+    }
+
+    public function GetAll(){
+        return $this->taiKhoanDAO->GetAll();
+    }
+
+    public function GetAllAvailable(){
+        return $this->taiKhoanDAO->GetAll();
+    }
+
+    public function SetDelete($maTaiKhoan){
+        $this->taiKhoanDAO->SetDelete($maTaiKhoan);
+    }
+
+    public function UnsetDelete($maTaiKhoan){
+        $this->taiKhoanDAO->UnsetDelete($maTaiKhoan);
+    }
+
+    public function CheckIsDeleted($tenDangNhap){
+        return $this->taiKhoanDAO->CheckIsDeleted($tenDangNhap);
     }
 }

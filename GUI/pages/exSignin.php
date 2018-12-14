@@ -18,26 +18,32 @@ if(isset($_POST['btnSubmit']))
 
         $taiKhoanBUS = new TaiKhoanBUS();
         $soLuong = $taiKhoanBUS->VerifyAccount($tenDangNhap, $matKhau);
-        if ($soLuong == 0)
+        $isDeleted = $taiKhoanBUS->CheckIsDeleted($tenDangNhap);
+
+        if ($soLuong == 0 )
         {
             echo "<script>alert('Tài khoản hoặc mật khẩu sai !!!')</script>";
             echo "<script>window.open('?a=6','_self')</script>";
         }
+        else if ($isDeleted == 1)
+        {
+            echo "<script>alert('Tài khoản của bạn đã bị vô hiệu hoá')</script>";
+            echo "<script>window.open('?a=6','_self')</script>";
+        }
         else{
             $loaiTaiKhoan = $taiKhoanBUS->CheckTypeAccount($tenDangNhap);
-            if($loaiTaiKhoan == 'user')
+            if($loaiTaiKhoan == 'user' )
             {
                 $_SESSION['TenNguoiDung'] = $taiKhoanBUS->GetName($tenDangNhap);
                 $_SESSION['MaTaiKhoan'] = $taiKhoanBUS->GetID($tenDangNhap);
                 echo "<script>alert('Đăng Nhập Thành Công')</script>";
                 echo "<script>window.open('index.php','_self')</script>";
-//                echo "<script>location.href='index.php'</script>";
             }
             else
             {
                 $_SESSION['TenNguoiDung'] = $taiKhoanBUS->GetName($tenDangNhap);
                 echo "<script>alert('Đăng Nhập Thành Công')</script>";
-                echo "<script>window.open('admin.php','_self')</script>";
+                echo "<script>window.open('GUI/admin/index.php','_self')</script>";
             }
         }
     }

@@ -17,12 +17,20 @@ class DonDatHangBUS
 
     public function Insert($data)
     {
-        return $this->donDatHangDAO->Insert($data);
+        $this->donDatHangDAO->Insert($data);
     }
 
     public function GetAllById($maTaiKhoan)
     {
         return $this->donDatHangDAO->GetAllById($maTaiKhoan);
+    }
+
+    public function GetMaDonHang(){
+        return $this->donDatHangDAO->GetMaDonHang();
+    }
+
+    public function GetNumRows(){
+        return $this->donDatHangDAO->GetNumRows();
     }
 
 }

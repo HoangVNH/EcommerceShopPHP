@@ -1,0 +1,240 @@
+input#search  {
+    padding-right: 70px;
+}
+input#search + span {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+#login .navbar {
+    margin-bottom: 20px;
+}
+#login .container{
+    max-width:330px;
+}
+.navbar{
+    margin-bottom:0;
+    border-radius:0;
+}
+.navbar .dropdown-menu li a {
+    padding: 15px 20px;
+}
+.navbar-brand .fa{
+    font-size: 20px;
+}
+#main {
+    margin-left: 250px;
+}
+#sidebar{
+    float: left;
+    width: 250px;
+}
+#sidebar-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    z-index: -1;
+    width: 250px;
+    border-right:1px solid #ddd;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    background:#f5f5f5;
+}
+
+#sidebar .panel-title{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#sidebar ul{
+    list-style: none;
+    margin:0;
+}
+#sidebar ul li{
+    padding:0;
+    background:#f9f9f9;
+}
+#sidebar ul li a{
+    display: block;
+    padding:15px 15px;
+    text-decoration:none;
+    color:#333;
+    font-size: 15px;
+}
+ul#menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+ul#menu a:hover {
+    color: #fff;
+    background:#16775c;
+}
+
+ul#menu li {
+    padding: 0;
+    background: #f9f9f9;
+}
+
+.breadcrumb{
+    padding: 10px 15px;
+    border-radius:0;
+    border-bottom:1px solid #ddd;
+    margin-top: -2px;
+    text-decoration: none;
+}
+.breadcrumb li a{
+    color: #16775c;
+}
+.breadcrumb li a:hover{
+    color: #1d9977;
+    text-decoration: none;
+}
+.breadcrumb li+li:before{
+    content:"\f105";
+    font-family:'FontAwesome';
+    display:inline-block;
+    padding-right:8px;
+    color:#999;
+}
+.menu a{
+    display: inline-block;
+    padding: 15px;
+    margin:0 15px 15px 0;
+    text-align:center;
+    text-decoration:none;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #16775c;
+    transition: 0.5s;
+}
+.menu a:hover{
+    color: #1d9977;
+    transform: scale(0.9);
+}
+.menu a .fa{
+    display: block;
+    font-size: 50px;
+    padding-bottom: 10px;
+    margin:0 auto;
+}
+.dropdown-menu li a:hover{
+    background-color: #16775c;
+    color: #fff;
+}
+
+/* quản lý tài khoản */
+.quanlytaikhoan h3{
+    text-align: center;
+    color: #16775c;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.btn.btn-submit{
+    background-color:  #16775c;
+    border-color: #13664f;
+    color: #fff;
+}
+.fa-search{
+    margin-top: 5px;
+    color: #16775c;
+}
+#search{
+    border-color: #16775c;
+}
+
+.fa-pencil{
+    color: #16775c;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.fa-remove{
+    color: #b94a48;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.fa-minus-circle{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.pagination li a{
+    background-color: #fff !important;
+    color: #16775c !important;
+}
+.pagination .active span{background: #16775c;}
+.pagination .active span:hover{background: #16775c;}
+/* hết quản lý tài khoản */
+
+/* quản lý sản phẩm */
+.img-thumbnail{
+    width: 80px;
+}
+.ghichu{
+    float: left;
+}
+.tinhtrang1{
+    float: left;
+    margin-right: 100px;
+}
+/* hết quản lý sản phẩm */
+
+.luachon{
+    border-color: #13664f;
+    color: #13664f;
+    padding: 8px 15px;
+    margin-right: 10px;
+}
+.form-group label{
+    color: #13664f;
+}
+.switch {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 55px;
+}
+
+.switch input {
+    display:none;
+}
+/* thay đổi mật khẩu */
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    }
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 21px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 21px;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/* hết thay đổi mật khẩu */

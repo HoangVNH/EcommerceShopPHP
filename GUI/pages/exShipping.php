@@ -2,36 +2,53 @@
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $data =
-    [
-        'TongTien' => $_SESSION['TongTien'],
-        'MaTaiKhoan' => $_SESSION['MaTaiKhoan'],
-    ];
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
 
+    $curTime = date('d').date('m').date('Y');
+
+    $ddh = new DonDatHang();
     $donDatHang = new DonDatHangBUS();
-    $idDDH = $donDatHang->Insert($data);
 
-    if ($idDDH > 0){
-        foreach ($_SESSION['GioHang'] as $key=>$value)
-        {
-            $data2 =
-                [
-                    'MaDonDatHang' => $idDDH,
-                    'MaSanPham' => $key,
-                    'SoLuong' => $value['SoLuong'],
-                    'GiaSanPham' => $value['Gia']
-                ];
-
-            $sanPham = new SanPhamBUS();
-            $sanPham->UpdateSoLuongBan($key, $value['SoLuong']);
-
-            $chiTietDonDatHang = new ChiTietDonDatHangBUS();
-            $idCTDDH = $chiTietDonDatHang->Insert($data2);
-        }
-        unset($_SESSION['GioHang']);
-        unset($_SESSION['TongTien']);
-        echo "<script>location.href='?a=112'</script>";
+    $maDH = "";
+    $nums = $donDatHang->GetNumRows();
+    if($nums < 2)
+    {
+        $maDH = $curTime.str_repeat('0', 3).'1';
     }
+    else{
+        $lstMaDH = $donDatHang->GetMaDonHang();
+        foreach ($lstMaDH as $MaDH)
+            $maDH = $MaDH;
+        $maDH = substr($maDH, 6, 3);
+        $maDH += 1;
+        $maDH = $curTime.str_repeat('0', 4 - strlen($maDH)).$maDH;
+    }
+
+    $ddh->MaDonHang = $maDH;
+    $ddh->TongTien = $_SESSION['TongTien'];
+    $ddh->MaTaiKhoan = $_SESSION['MaTaiKhoan'];
+
+    // Thêm vào database đơn hàng
+    $donDatHang->Insert($ddh);
+
+    $ctddh = new ChiTietDonDatHang();
+
+    foreach ($_SESSION['GioHang'] as $key=>$value)
+    {
+        $ctddh->MaDonDatHang = $maDH;
+        $ctddh->MaSanPham = $key;
+        $ctddh->SoLuong = $value['SoLuong'];
+        $ctddh->GiaSanPham = $value['Gia'];
+
+        $sanPham = new SanPhamBUS();
+        $sanPham->UpdateSoLuongBan($key, $value['SoLuong']);
+
+        $chiTietDonDatHang = new ChiTietDonDatHangBUS();
+        $chiTietDonDatHang->Insert($ctddh);
+    }
+    unset($_SESSION['GioHang']);
+    unset($_SESSION['TongTien']);
+    echo "<script>location.href='?a=112'</script>";
 }
 
 if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))

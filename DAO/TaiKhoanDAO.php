@@ -16,7 +16,13 @@ class TaiKhoanDAO extends DB
 
     public function Update($taiKhoan)
     {
-        $sql = "UPDATE taikhoan SET MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi' WHERE MaTaiKhoan = '$taiKhoan->MaTaiKhoan'";
+        $sql = "UPDATE taikhoan SET  MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi' WHERE MaTaiKhoan = '$taiKhoan->MaTaiKhoan'";
+        $this->ExecuteQuery($sql);
+    }
+
+    public function UpdateByAdmin($taiKhoan)
+    {
+        $sql = "UPDATE taikhoan SET TenDangNhap = '$taiKhoan->TenDangNhap', MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi', LoaiTaiKhoan = '$taiKhoan->LoaiTaiKhoan', BiXoa = $taiKhoan->BiXoa WHERE MaTaiKhoan = $taiKhoan->MaTaiKhoan";
         $this->ExecuteQuery($sql);
     }
 
@@ -61,7 +67,7 @@ class TaiKhoanDAO extends DB
     }
 
     public function GetInfoByID($maTaiKhoan){
-        $sql = "SELECT TenDangNhap, HoTen, NgaySinh, DiaChi FROM taikhoan WHERE MaTaiKhoan = '$maTaiKhoan'";
+        $sql = "SELECT MaTaiKhoan, TenDangNhap, MatKhau, HoTen, NgaySinh, DiaChi, LoaiTaiKhoan, BiXoa FROM taikhoan WHERE MaTaiKhoan = $maTaiKhoan";
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row;
@@ -71,6 +77,65 @@ class TaiKhoanDAO extends DB
         $sql = "SELECT MatKhau FROM taikhoan WHERE MaTaiKhoan = '$maTaiKhoan'";
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
+        return $row[0];
+    }
+
+    public function GetAll(){
+        $sql = "SELECT MaTaiKhoan, TenDangNhap, MatKhau, HoTen, NgaySinh, DiaChi, LoaiTaiKhoan, BiXoa FROM taikhoan";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            return null;
+        $lstTaiKhoan = array();
+        while($row = mysqli_fetch_array($result)){
+            $taiKhoan = new TaiKhoan();
+            $taiKhoan->MaTaiKhoan = $row['MaTaiKhoan'];
+            $taiKhoan->TenDangNhap = $row['TenDangNhap'];
+            $taiKhoan->MatKhau = $row['MatKhau'];
+            $taiKhoan->HoTen = $row['HoTen'];
+            $taiKhoan->NgaySinh = $row['NgaySinh'];
+            $taiKhoan->DiaChi = $row['DiaChi'];
+            $taiKhoan->LoaiTaiKhoan = $row['LoaiTaiKhoan'];
+            $taiKhoan->BiXoa = $row['BiXoa'];
+            $lstTaiKhoan[] = $taiKhoan;
+        }
+        return $lstTaiKhoan;
+    }
+
+    public function GetAllAvailable(){
+        $sql = "SELECT MaTaiKhoan, TenDangNhap, MatKhau, HoTen, NgaySinh, DiaChi, LoaiTaiKhoan, BiXoa FROM taikhoan WHERE BiXoa = 0";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            return null;
+        $lstTaiKhoan = array();
+        while($row = mysqli_fetch_array($result)){
+            $taiKhoan = new TaiKhoan();
+            $taiKhoan->MaTaiKhoan = $row['MaTaiKhoan'];
+            $taiKhoan->TenDangNhap = $row['TenDangNhap'];
+            $taiKhoan->MatKhau = $row['MatKhau'];
+            $taiKhoan->HoTen = $row['HoTen'];
+            $taiKhoan->NgaySinh = $row['NgaySinh'];
+            $taiKhoan->DiaChi = $row['DiaChi'];
+            $taiKhoan->LoaiTaiKhoan = $row['LoaiTaiKhoan'];
+            $taiKhoan->BiXoa = $row['BiXoa'];
+            $lstTaiKhoan[] = $taiKhoan;
+        }
+        return $lstTaiKhoan;
+    }
+
+    public function SetDelete($maTaiKhoan){
+        $sql = "UPDATE taikhoan SET BiXoa = 1 WHERE MaTaiKhoan = $maTaiKhoan";
+        $this->ExecuteQuery($sql);
+    }
+
+    public function UnsetDelete($maTaiKhoan){
+        $sql = "UPDATE taikhoan SET BiXoa = 0 WHERE MaTaiKhoan = $maTaiKhoan";
+        $this->ExecuteQuery($sql);
+    }
+
+    public function CheckIsDeleted($tenDangNhap){
+        $sql = "SELECT BiXoa FROM taikhoan WHERE TenDangNhap = '$tenDangNhap'";
+        $row = $this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($row);
         return $row[0];
     }
 }

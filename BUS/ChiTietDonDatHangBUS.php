@@ -15,7 +15,7 @@ class ChiTietDonDatHangBUS
         $this->chiTietDonDatHangDAO = new ChiTietDonDatHangDAO();
     }
 
-    public function Insert($data){
-        return $this->chiTietDonDatHangDAO->Insert($data);
+    public function Insert($chiTietDonDatHang){
+         $this->chiTietDonDatHangDAO->Insert($chiTietDonDatHang);
     }
 }

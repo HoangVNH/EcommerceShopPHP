@@ -1,7 +1,7 @@
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-home"></i> Trang quản trị</a></li>
-        <li><a class="active" href="?a=7"><i class="fa fa-flag"></i> Quản lý Hãng Sản Xuất</a></li>
+        <li><a class="active" href="?a=7"><i class="fa fa-flag"></i> Quản lý hãng sản xuất</a></li>
     </ol>
     <div class="col-xs-12">
         <div class="quanlytaikhoan">

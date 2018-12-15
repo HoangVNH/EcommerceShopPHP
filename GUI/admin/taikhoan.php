@@ -51,7 +51,7 @@
                     <a href="?a=3&id=<?php echo $taiKhoan->MaTaiKhoan ?>">
                         <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa Tài Khoản"></i>
                     </a>
-                    <a href="?a=105&id=<?php echo $taiKhoan->MaTaiKhoan ?>&d=<?php echo $taiKhoan->BiXoa ?>">
+                    <a href="?a=104&id=<?php echo $taiKhoan->MaTaiKhoan ?>&d=<?php echo $taiKhoan->BiXoa ?>">
                         <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa Tài Khoản"></i>
                     </a>
                 </td>

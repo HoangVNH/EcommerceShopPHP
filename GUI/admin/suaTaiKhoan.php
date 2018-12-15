@@ -87,17 +87,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="keywords" class="col-sm-3 control-label">Bị xoá<span style="color: red">*</span></label>
-                <div class="col-sm-9">
-                    <?php $biXoa = array('0'=>'0', '1'=>'1') ?>
-                    <select class="form-control" name="bixoa" required>
-                        <?php foreach($biXoa as $id=>$value) { ?>
-                            <option value="<?php echo $id; ?>" <?php echo ($id == $taiKhoan->BiXoa) ? 'selected' : ''; ?>> <?php echo $value; ?> </option>
-                        <?php } ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="validationTooltip06" class="col-sm-3 text-right">Mật khẩu hiện tại <span style="color: red">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" value="<?php echo $taiKhoan->MatKhau ?>" class="form-control thongtin" id="passwordInputOld" name="oldpwd" required>

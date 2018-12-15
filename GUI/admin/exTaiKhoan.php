@@ -13,7 +13,6 @@
         $taiKhoan->NgaySinh = isset($_POST['ngaysinh']) ? $_POST['ngaysinh'] : $info['NgaySinh'];
         $taiKhoan->DiaChi = isset($_POST['diachi']) ? $_POST['diachi'] : $info['DiaChi'];
         $taiKhoan->LoaiTaiKhoan = isset($_POST['loaitaikhoan']) ? $_POST['loaitaikhoan'] : $info['LoaiTaiKhoan'];
-        $taiKhoan->BiXoa = isset($_POST['bixoa']) ? $_POST['bixoa'] : $info['BiXoa'];
 
         $taiKhoanBUS->UpdateByAdmin($taiKhoan);
 

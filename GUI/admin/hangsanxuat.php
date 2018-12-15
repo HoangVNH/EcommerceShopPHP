@@ -42,10 +42,10 @@
                 <td><?php echo $hangSanXuat->BiXoa ?> </td>
                 <td>
                     <a href="?a=9&id=<?php echo $hangSanXuat->MaHangSanXuat ?>">
-                        <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa Hãng Sản Xuất"></i>
+                        <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa hãng sản xuất"></i>
                     </a>
                     <a href="?a=108&id=<?php echo $hangSanXuat->MaHangSanXuat ?>&d=<?php echo $hangSanXuat->BiXoa ?>">
-                        <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa Sửa Hãng Sản Xuất"></i>
+                        <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa hãng sản xuất"></i>
                     </a>
                 </td>
             </tr>
@@ -54,7 +54,7 @@
         </table>
 
         <p><strong><i class="fa fa-bookmark"></i> Ghi chú: </strong></p>
-        <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa Hãng Sản Xuất.</p>
-        <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa Hãng Sản Xuất.</p>
+        <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa hãng sản xuất.</p>
+        <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa hãng sản xuất.</p>
     </div>
 </div>

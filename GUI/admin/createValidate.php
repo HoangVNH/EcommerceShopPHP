@@ -15,4 +15,11 @@ if (isset($_POST["user_name"]))
     $res = mysqli_query($connect, $query);
     echo mysqli_num_rows($res);
     mysqli_close($connect);
+} else if (isset($_POST['tenloaisp']))
+{
+    $tenLoaiSP = mysqli_real_escape_string($connect, $_POST["tenloaisp"]);
+    $query = "SELECT TenLoai FROM loaisanpham WHERE TenLoai = N'$tenLoaiSP'";
+    $res = mysqli_query($connect, $query);
+    echo mysqli_num_rows($res);
+    mysqli_close($connect);
 }

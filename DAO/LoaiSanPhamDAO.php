@@ -44,8 +44,8 @@ class LoaiSanPhamDAO extends DB
         return $lstLoaiSanPham;
     }
 
-    public function Insert($loaiSanPham){
-        $sql = "INSERT INTO loaisanpham(TenLoai, BiXoa) VALUES ('$loaiSanPham->TenLoai', $loaiSanPham->BiXoa)";
+    public function Insert($tenLoai){
+        $sql = "INSERT INTO loaisanpham(TenLoai) VALUES (N'$tenLoai')";
         $this->ExecuteQuery($sql);
     }
 
@@ -65,7 +65,7 @@ class LoaiSanPhamDAO extends DB
     }
 
     public function Update($loaiSanPham){
-        $sql = "UPDATE loaisanpham SET TenLoai = '$loaiSanPham->TenLoai', BiXoa = $loaiSanPham->BiXoa WHERE MaLoai = $loaiSanPham->MaLoai";
+        $sql = "UPDATE loaisanpham SET TenLoai = N'$loaiSanPham->TenLoai' WHERE MaLoai = $loaiSanPham->MaLoai";
         $this->ExecuteQuery($sql);
     }
 
@@ -74,5 +74,12 @@ class LoaiSanPhamDAO extends DB
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row[0];
+    }
+
+    public function GetOnId($maLoai){
+        $sql = "SELECT MaLoai, TenLoai FROM loaisanpham WHERE MaLoai = $maLoai";
+        $result = $this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        return $row;
     }
 }

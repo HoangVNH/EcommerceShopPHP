@@ -71,6 +71,12 @@
         case 10:
             include("loaisanpham.php");
             break;
+        case 11:
+            include("suaLoaiSanPham.php");
+            break;
+        case 12:
+            include("themLoaiSanPham.php");
+            break;
         case 103:
             include("exTaiKhoan.php");
             break;
@@ -89,9 +95,16 @@
         case 108:
             include("exXoaHangSanXuat.php");
             break;
+        case 109:
+            include("exXoaLoaiSanPham.php");
+            break;
+        case 110:
+            include("exLoaiSanPham.php");
+            break;
+
     }
         ?>
-    
+
 <?php include ("../modules/adfooter.php");?>
 </body>
 </html>

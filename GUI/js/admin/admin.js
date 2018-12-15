@@ -55,3 +55,29 @@ $(document).ready(function() {
         })
     });
 });
+
+// Kiểm tra tên loại sản phẩm đã có trong database chưa ? thông báo màn hình "tên hãng sản xuất đã tồn tại" : thông báo và bỏ disabled ở nút Đăng ký
+$(document).ready(function() {
+    $('#tenlsp').blur(function(){
+        var loaisp = $(this).val();
+
+        $.ajax({
+            url:"createValidate.php",
+            method:"POST",
+            data:{tenloaisp:loaisp},
+            success:function(data)
+            {
+                if(data != '0')
+                {
+                    $('#availability').html('<span class="text-danger">Đã tồn tại</span>');
+                    $('#submitBtn').prop("disabled", true);
+                }
+                else
+                {
+                    $('#availability').html('<span class="text-success">Hợp lệ</span>');
+                    $('#submitBtn').prop("disabled", false);
+                }
+            }
+        })
+    });
+});

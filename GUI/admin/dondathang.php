@@ -47,10 +47,10 @@
                 <td><?php echo $donHang->BiXoa ?></td>
                 <td>
                     <a href="?a=6&mdh=<?php echo $donHang->MaDonHang ?>">
-                        <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa Tài Khoản"></i>
+                        <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa đơn hàng"></i>
                     </a>
                     <a href="?a=105&mdh=<?php echo $donHang->MaDonHang?>&d=<?php echo $donHang->BiXoa ?>&">
-                        <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa Tài Khoản"></i>
+                        <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa đơn hàng"></i>
                     </a>
 
                     <p style="color: red" id="show_message"></p>
@@ -72,9 +72,8 @@
 
         <div class="tinhtrang1">
             <p><strong><i class="fa fa-bookmark"></i> Ghi chú: </strong></p>
-            <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa Tài Khoản.</p>
-            <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa Tài Khoản.</p>
-            <p class="note-items"><i class="fa fa-minus-circle text-warning"></i> Ẩn Tài Khoản.</p>
+            <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa đơn hàng.</p>
+            <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa đơn hàng.</p>
         </div>
         <div class="tinhtrang2">
             <p><strong><i class="fa fa-bookmark"></i> Tình Trạng: </strong></p>

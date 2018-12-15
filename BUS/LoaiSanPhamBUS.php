@@ -24,8 +24,8 @@ class LoaiSanPhamBUS
         return $this->loaiSanPhamDAO->GetAllAvailable();
     }
 
-    public function Insert($loaiSanPham){
-        $this->loaiSanPhamDAO->Insert($loaiSanPham);
+    public function Insert($tenLoai){
+        $this->loaiSanPhamDAO->Insert($tenLoai);
     }
 
     public function Delete($maLoaiSanPham){
@@ -50,13 +50,15 @@ class LoaiSanPhamBUS
         $this->loaiSanPhamDAO->UnsetDelete($loaiSanPham);
     }
 
-    public function Update($tenLoai){
-        $loaiSanPham = new LoaiSanPham();
-        $loaiSanPham->TenLoai = $tenLoai;
+    public function Update($loaiSanPham){
         $this->loaiSanPhamDAO->Update($loaiSanPham);
     }
 
     public function CountProductsBasedOnCategory($maLoaiSanPham){
         return $this->loaiSanPhamDAO->CountProductsBasedOnCategory($maLoaiSanPham);
+    }
+
+    public function GetOnId($maLoai){
+        return $this->loaiSanPhamDAO->GetOnId($maLoai);
     }
 }

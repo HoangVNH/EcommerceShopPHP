@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 dangky-header">
-            <a href="?h=login">Đăng Nhập</a>
+            <a href="?a=6">Đăng Nhập</a>
         </div>
     </div>
 </div>

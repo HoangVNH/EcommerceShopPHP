@@ -10,7 +10,7 @@ class DonDatHangDAO extends DB
 
     public function GetAllById($maTaiKhoan)
     {
-        $sql = "SELECT ddh.MaDonHang, ddh.NgayMua, sp.TenHienThi, ddh.TongTien, ddh.TinhTrang FROM dondathang ddh, chitietdondathang ctddh, sanpham sp WHERE ddh.MaTaiKhoan = $maTaiKhoan AND ctddh.MaDonDatHang = ddh.MaDonHang AND sp.MaSanPham = ctddh.MaSanPham AND ddh.BiXoa <> 1";
+        $sql = "SELECT ddh.MaDonHang, ddh.NgayMua, sp.TenHienThi, ddh.TongTien, ddh.TinhTrang FROM dondathang ddh, chitietdondathang ctddh, sanpham sp WHERE ddh.MaTaiKhoan = $maTaiKhoan AND ctddh.MaDonDatHang = ddh.MaDonHang AND sp.MaSanPham = ctddh.MaSanPham AND ddh.BiXoa = 0";
         $result = $this->ExecuteQuery($sql);
         $lstDonDatHang = array();
         while($row = mysqli_fetch_array($result))

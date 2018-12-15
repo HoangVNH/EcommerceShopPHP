@@ -13,7 +13,7 @@ class HangSanXuatDAO extends DB
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             return null;
-        $lstLogo = array();
+        $lstHSX = array();
         while($row = mysqli_fetch_array($result))
         {
             $hangSanXuat = new HangSanXuat();
@@ -21,9 +21,9 @@ class HangSanXuatDAO extends DB
             $hangSanXuat->TenHangSanXuat = $row["TenHangSanXuat"];
             $hangSanXuat->LogoURL = $row["LogoURL"];
             $hangSanXuat->BiXoa = $row["BiXoa"];
-            $lstLogo[] = $hangSanXuat;
+            $lstHSX[] = $hangSanXuat;
         }
-        return $lstLogo;
+        return $lstHSX;
     }
 
     public function GetAllAvailable(){
@@ -31,15 +31,15 @@ class HangSanXuatDAO extends DB
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             return null;
-        $lstLogo = array();
+        $lstHSX = array();
         while($row = mysqli_fetch_array($result))
         {
             $hangSanXuat = new HangSanXuat();
             $hangSanXuat->MaHangSanXuat = $row["MaHangSanXuat"];
             $hangSanXuat->LogoURL = $row["LogoURL"];
-            $lstLogo[] = $hangSanXuat;
+            $lstHSX[] = $hangSanXuat;
         }
-        return $lstLogo;
+        return $lstHSX;
     }
 
     public function GetLogo($cat)
@@ -79,18 +79,18 @@ class HangSanXuatDAO extends DB
         $this->ExecuteQuery($sql);
     }
 
-    public function SetDelete($hangSanXuat){
-        $sql = "UPDATE hangsanxuat SET BiXoa = 1 WHERE MaHangSanPham = $hangSanXuat->MaHangSanPham";
+    public function SetDelete($maHangSanXuat){
+        $sql = "UPDATE hangsanxuat SET BiXoa = 1 WHERE MaHangSanXuat = $maHangSanXuat";
         $this->ExecuteQuery($sql);
     }
 
-    public function UnsetDelete($hangSanXuat){
-        $sql = "UPDATE hangsanxuat SET BiXoa = 0 WHERE MaHangSanPham = $hangSanXuat->MaHangSanPham";
+    public function UnsetDelete($maHangSanXuat){
+        $sql = "UPDATE hangsanxuat SET BiXoa = 0 WHERE MaHangSanXuat = $maHangSanXuat";
         $this->ExecuteQuery($sql);
     }
 
     public function Update($hangSanXuat){
-        $sql = "UPDATE hangsanxuat SET TenHangSanXuat = '$hangSanXuat->TenHangSanXuat', LogoURL = '$hangSanXuat->LogoURL', BiXoa = $hangSanXuat->BiXoa WHERE MaHangSanXuat = $hangSanXuat->MaHangSanXuat";
+        $sql = "UPDATE hangsanxuat SET TenHangSanXuat = '$hangSanXuat->TenHangSanXuat', LogoURL = '$hangSanXuat->LogoURL' WHERE MaHangSanXuat = $hangSanXuat->MaHangSanXuat";
         $this->ExecuteQuery($sql);
     }
 
@@ -99,5 +99,12 @@ class HangSanXuatDAO extends DB
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row[0];
+    }
+
+    public function GetBrandOnId($maHangSanXuat){
+        $sql = "SELECT TenHangSanXuat, LogoURL FROM hangsanxuat where MaHangSanXuat = $maHangSanXuat";
+        $result = $this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        return $row;
     }
 }

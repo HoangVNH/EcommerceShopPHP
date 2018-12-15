@@ -8,4 +8,11 @@ if (isset($_POST["user_name"]))
     $res = mysqli_query($connect, $query);
     echo mysqli_num_rows($res);
     mysqli_close($connect);
+} else if (isset($_POST["tenHSX"]))
+{
+    $tenHSX = mysqli_real_escape_string($connect, $_POST["tenHSX"]);
+    $query = "SELECT TenHangSanXuat FROM hangsanxuat WHERE TenHangSanXuat = '" . $tenHSX . "'";
+    $res = mysqli_query($connect, $query);
+    echo mysqli_num_rows($res);
+    mysqli_close($connect);
 }

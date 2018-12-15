@@ -1,13 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: sunsh
- * Date: 06-Dec-18
- * Time: 10:30 PM
- */
-?>
-
-<!-- slide -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 col-lg-12">
@@ -94,7 +84,7 @@
             foreach ($lstSanPham as $sanPham){
                 echo ('
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                    <a href="?h=details&id=' . $sanPham->MaSanPham . '">
+                    <a href="?a=4&id=' . $sanPham->MaSanPham . '">
                     <div class="thumbnail effect">
                         <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                         <div class="productname">' . $sanPham->TenHienThi . '</div>

@@ -17,7 +17,7 @@
     <ol class="breadcrumb">
         <li><a href="?a=1"><i class="fa fa-home"></i> Trang quản trị</a></li>
         <li><a class="" href="?a=2"><i class="fa fa-users"></i> Quản lý tài khoản</a></li>
-        <li><a class="active" href="?a=102"><i class="fa fa-users"></i> Sửa tài khoản</a></li>
+        <li><a class="active" href="#"><i class="fa fa-users"></i> Sửa tài khoản</a></li>
     </ol>
     <div class="col-xs-12">
         <div class="quanlytaikhoan">

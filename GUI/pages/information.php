@@ -34,23 +34,23 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <form method="post" action="?h=exInformation">
+                    <form method="post" action="?a=113">
                         <div class="form-group row" style="margin-top: 30px;">
                             <label for="" class="col-sm-4 col-md-2 col-form-label">Tên đăng nhập</label>
                             <div class="col-sm-8 col-md-6">
-                                <input type="text" disabled class="form-control thongtin" id="" value="<?php echo $taiKhoan->TenDangNhap ?>">
+                                <input type="text" readonly class="form-control thongtin" value="<?php echo $taiKhoan->TenDangNhap ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-md-2 col-form-label">Họ tên</label>
                             <div class="col-sm-8 col-md-6">
-                                <input type="text" class="form-control thongtin" id="" name="hoTen" value="<?php echo $taiKhoan->HoTen ?>">
+                                <input type="text" class="form-control thongtin" name="hoTen" value="<?php echo $taiKhoan->HoTen ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-md-2 col-form-label">Ngày sinh</label>
                             <div class="col-sm-8 col-md-6">
-                                <input type="text" class="form-control thongtin" id="" name="ngaySinh" value="<?php echo ($taiKhoan->NgaySinh); ?>">
+                                <input type="text" class="form-control thongtin" name="ngaySinh" value="<?php echo ($taiKhoan->NgaySinh); ?>">
                             </div>
                         </div>
                         <div class="form-group row">

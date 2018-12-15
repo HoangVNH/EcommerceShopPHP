@@ -31,8 +31,8 @@ if(isset($_POST['btnSubmit']))
             echo "<script>window.open('?a=6','_self')</script>";
         }
         else{
-            $loaiTaiKhoan = $taiKhoanBUS->CheckTypeAccount($tenDangNhap);
-            if($loaiTaiKhoan == 'user' )
+            $_SESSION['LoaiTaiKhoan'] = $taiKhoanBUS->CheckTypeAccount($tenDangNhap);
+            if($_SESSION['LoaiTaiKhoan'] == 'user')
             {
                 $_SESSION['TenNguoiDung'] = $taiKhoanBUS->GetName($tenDangNhap);
                 $_SESSION['MaTaiKhoan'] = $taiKhoanBUS->GetID($tenDangNhap);
@@ -42,7 +42,7 @@ if(isset($_POST['btnSubmit']))
             else
             {
                 $_SESSION['TenNguoiDung'] = $taiKhoanBUS->GetName($tenDangNhap);
-                echo "<script>alert('Đăng Nhập Thành Công')</script>";
+                echo "<script>alert('Đăng nhập thành công')</script>";
                 echo "<script>window.open('GUI/admin/index.php','_self')</script>";
             }
         }

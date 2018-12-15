@@ -17,7 +17,7 @@
 
         $taiKhoanBUS->UpdateByAdmin($taiKhoan);
 
-        echo "<script>alert('Xoá tài khoản thành công')</script>";
+        echo "<script>alert('Cập nhật tài khoản thành công')</script>";
         echo "<script>window.open('?a=2','_self')</script>";
     } else if ($act == 'new'){
         $taiKhoan = new TaiKhoan();

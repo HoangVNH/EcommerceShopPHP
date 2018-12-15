@@ -15,7 +15,7 @@
     <ol class="breadcrumb">
         <li><a href="?a=1"><i class="fa fa-home"></i> Trang quản trị</a></li>
         <li><a class="active" href="?a=5"><i class="fa fa-cubes"></i> Quản lý đơn đặt hàng</a></li>
-        <li><a class="active" href="?a=6"><i class="fa fa-cubes"></i> Sửa thông tin đơn đặt hàng</a></li>
+        <li><a class="active" href="#"><i class="fa fa-cubes"></i> Sửa thông tin đơn đặt hàng</a></li>
     </ol>
     <div class="col-xs-12">
         <div class="quanlytaikhoan">

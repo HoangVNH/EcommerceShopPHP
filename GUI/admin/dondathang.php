@@ -7,7 +7,7 @@
         <div class="quanlytaikhoan">
             <h3>QUẢN LÝ ĐƠN ĐẶT HÀNG</h3>
             <div class="form-group">
-                <a href="new_oder.html" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
+                <a href="#" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
                 <div class="btn-group pull-right" id="">
                     <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
                     <span type="submit" class="fa fa-search"></span>

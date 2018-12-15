@@ -1,3 +1,11 @@
+<?php
+//if(!isset($_SESSION))
+//    session_start();
+//if((isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'admin') || !(isset($_SESSION['LoaiTaiKhoan']))) {
+//    echo "<script>window.open('../../index.php','_self')</script>";
+//    exit();
+//}
+//?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +59,18 @@
         case 6:
             include("suaDonDatHang.php");
             break;
+        case 7:
+            include("hangsanxuat.php");
+            break;
+        case 8:
+            include("themHangSanXuat.php");
+            break;
+        case 9:
+            include("suaHangSanXuat.php");
+            break;
+        case 10:
+            include("loaisanpham.php");
+            break;
         case 103:
             include("exTaiKhoan.php");
             break;
@@ -63,10 +83,15 @@
         case 106:
             include("exDonDatHang.php");
             break;
+        case 107:
+            include("exHangSanXuat.php");
+            break;
+        case 108:
+            include("exXoaHangSanXuat.php");
+            break;
     }
         ?>
-
-<!-- hết phần menu bên trái -->
+    
 <?php include ("../modules/adfooter.php");?>
 </body>
 </html>

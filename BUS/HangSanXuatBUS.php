@@ -49,24 +49,22 @@ class HangSanXuatBUS
     }
 
     public function SetDelete($maHangSanXuat){
-        $hangSanXuat = new HangSanXuat();
-        $hangSanXuat->MaHangSanXuat = $maHangSanXuat;
-        $this->hangSanXuatDAO->SetDelete($hangSanXuat);
+        $this->hangSanXuatDAO->SetDelete($maHangSanXuat);
     }
 
     public function UnsetDelete($maHangSanXuat){
-        $hangSanXuat = new HangSanXuat();
-        $hangSanXuat->MaHangSanXuat = $maHangSanXuat;
-        $this->hangSanXuatDAO->UnsetDelete($hangSanXuat);
+        $this->hangSanXuatDAO->UnsetDelete($maHangSanXuat);
     }
 
-    public function Update($tenHang){
-        $hangSanXuat = new HangSanXuat();
-        $hangSanXuat->TenHangSanXuat = $tenHang;
+    public function Update($hangSanXuat){
         $this->hangSanXuatDAO->Update($hangSanXuat);
     }
 
     public function CountProductsBasedOnBrand($maHangSanXuat){
         return $this->hangSanXuatDAO->CountProductsBasedOnBrand($maHangSanXuat);
+    }
+
+    public function GetBrandOnId($maHangSanXuat){
+        return $this->hangSanXuatDAO->GetBrandOnId($maHangSanXuat);
     }
 }

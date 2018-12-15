@@ -43,12 +43,12 @@
                 </a>
             </li>
             <li class="list-group-item">
-                <a href="category.html">
+                <a href="?a=10">
                     <i class="fa fa-grav"></i> <span> Quản Lý Loại Sản Phẩm</span>
                 </a>
             </li>
             <li class="list-group-item">
-                <a href="factory.html">
+                <a href="?a=7">
                     <i class="fa fa-flag"></i> <span> Quản Lý Hãng Sản Xuất</span>
                 </a>
             </li>

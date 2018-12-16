@@ -40,8 +40,8 @@
             <tr class="alert">
                 <td><?php echo $i ?></td>
                 <td><?php echo $donHang->MaDonHang ?></td>
-                <td><?php echo $donHang->NgayMua ?></td>
-                <td><?php echo $donHang->TongTien ?></td>
+                <td><?php echo substr($donHang->NgayMua, 0, 10) ?></td>
+                <td><?php echo number_format($donHang->TongTien, 0, ",", ",") ?> VNĐ</td>
                 <td><?php echo $donHang->MaTaiKhoan ?></td>
                 <td><?php echo $donHang->TinhTrang ?></td>
                 <td><?php echo $donHang->BiXoa ?></td>

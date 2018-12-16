@@ -67,7 +67,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                     <button type="submit" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Lưu mới</button>
-                    <a class="btn btn-warning" href="dondathang.php"><small><i class="fa fa-reply"></i></small> Trở về</a>
+                    <a class="btn btn-warning" href="?a=5"><small><i class="fa fa-reply"></i></small> Trở về</a>
                 </div>
             </div>
         </form>

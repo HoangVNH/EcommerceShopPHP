@@ -45,13 +45,13 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
                     </div>
                     <?php
                     echo '<p class="product-description">' . $sanPham->MoTa . '</p>';
-                    echo '<h4 class="price">Giá bán: <span style="color: red;">' . number_format($sanPham->Gia, 0, ".", ".") . 'đ</span></h4>';
+                    echo '<h4 class="price">Giá bán: <span style="color: red;">' . number_format($sanPham->Gia, 0, ",", ",") . 'đ</span></h4>';
                     echo '<p class="vote"><strong>' . $sanPham->SoLuongBan . '</strong> sản phẩm đã được bán! </p>';
                     echo '<p class="vote">Xuất xứ: ' . $sanPham->XuatXu . '</p>';
                     echo '<p class="vote">Hãng sản xuất: ' . $tenHangSX . '</p>';
                     ?>
                     <div class="action">
-                        <a href="index.php?a=105&id=<?php echo $sanPham->MaSanPham ?>"><button class="add-to-cart btn btn-default">Mua Ngay <i class="fa fa-shopping-cart"></i></button></a>
+                        <a href="?a=105&id=<?php echo $sanPham->MaSanPham ?>"><button class="add-to-cart btn btn-default">Mua Ngay <i class="fa fa-shopping-cart"></i></button></a>
                     </div>
             </div>
         </div>

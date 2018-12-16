@@ -6,21 +6,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php"><i class="fa fa-cogs"></i> Quản trị hệ thống</a>
+        <a class="navbar-brand" href="?a=1"><i class="fa fa-cogs"></i> Quản trị hệ thống</a>
     </div>
-    <!-- chuyển đổi khi reponse -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hoang Vu<b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin chào, <?php echo $_SESSION['TenNguoiDung'] ?><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-user"></i> Chỉnh sửa tài khoản</a></li>
-                    <li><a href="#"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
+                    <li><a href="?a=115"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                 </ul>
             </li>
         </ul>
     </div>
-    <!-- /.navbar-collapse -->
 </nav>
 <div id="sidebar-bg"></div>
 <div id="sidebar" role="navigation">
@@ -38,7 +35,7 @@
                 </a>
             </li>
             <li class="list-group-item">
-                <a href="product.html">
+                <a href="?a=13">
                     <i class="fa fa-tasks"></i><span> Quản Lý Sản Phẩm</span>
                 </a>
             </li>

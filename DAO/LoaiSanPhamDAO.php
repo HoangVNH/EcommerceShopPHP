@@ -82,4 +82,20 @@ class LoaiSanPhamDAO extends DB
         $row = mysqli_fetch_array($result);
         return $row;
     }
+
+    public function GetAllName(){
+        $sql = "SELECT MaLoai, TenLoai from loaisanpham";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            return null;
+        $lstLoaiSanPham = array();
+        while($row = mysqli_fetch_array($result))
+        {
+            $loaiSanPham = new LoaiSanPham();
+            $loaiSanPham->MaLoai = $row["MaLoai"];
+            $loaiSanPham->TenLoai = $row["TenLoai"];
+            $lstLoaiSanPham[] = $loaiSanPham;
+        }
+        return $lstLoaiSanPham;
+    }
 }

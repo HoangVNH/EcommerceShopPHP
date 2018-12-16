@@ -58,7 +58,7 @@
                     $hangSanXuat = new HangSanXuatBUS();
                     $lstLogo = $hangSanXuat->GetLogo($id);
                     foreach ($lstLogo as $hangSanXuat) {
-                        echo('<a href="?h=brand&id=' . $id . '&br=' . $hangSanXuat->MaHangSanXuat . '"><img src="' . $hangSanXuat->LogoURL . '"/></a>');
+                        echo('<a href="?a=3&id=' . $id . '&br=' . $hangSanXuat->MaHangSanXuat . '"><img src="' . $hangSanXuat->LogoURL . '"/></a>');
                     }
                 }
                 ?>

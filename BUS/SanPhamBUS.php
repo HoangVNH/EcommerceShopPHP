@@ -50,6 +50,11 @@ class SanPhamBUS
         return $this->sanPhamDAO->GetDetail($id);
     }
 
+    public function GetDetailByAdmin($id)
+    {
+        return $this->sanPhamDAO->GetDetailByAdmin($id);
+    }
+
     public function GetSameType($maLoai, $maSanPham)
     {
         return $this->sanPhamDAO->GetSameType($maLoai, $maSanPham);
@@ -68,12 +73,12 @@ class SanPhamBUS
         $this->sanPhamDAO->Delete($sanPham);
     }
 
-    public function SetDelete($sanPham){
-        $this->sanPhamDAO->SetDelete($sanPham);
+    public function SetDelete($maSanPham){
+        $this->sanPhamDAO->SetDelete($maSanPham);
     }
 
-    public function UnsetDelete($sanPham){
-        $this->sanPhamDAO->UnsetDelete($sanPham);
+    public function UnsetDelete($maSanPham){
+        $this->sanPhamDAO->UnsetDelete($maSanPham);
     }
 
     public function Update($sanPham){
@@ -90,5 +95,9 @@ class SanPhamBUS
 
     public function UpdateViews($sanPham){
         $this->sanPhamDAO->UpdateViews($sanPham);
+    }
+
+    public function GetAllByAdmin(){
+        return $this->sanPhamDAO->GetAllByAdmin();
     }
 }

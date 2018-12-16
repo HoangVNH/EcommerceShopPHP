@@ -24,7 +24,7 @@ if (isset($_POST["register"]))
 
     $taiKhoanBUS->Insert($taiKhoan);
 
-    echo "<script type=\"text/javascript\">"."alert('Tạo tài khoản thành công');"."location.href=\"index.php\";"."</script>";
+    echo "<script type=\"text/javascript\">"."alert('Tạo tài khoản thành công');"."location.href=\"?a=1\";"."</script>";
 }
 
 ?>

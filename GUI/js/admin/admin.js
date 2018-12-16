@@ -81,3 +81,29 @@ $(document).ready(function() {
         })
     });
 });
+
+// Kiểm tra tên sản phẩm đã có trong database chưa ? thông báo màn hình "Đã tồn tại" và bỏ disabled ở nút Đăng ký
+$(document).ready(function() {
+    $('#tensp').blur(function(){
+        var tensp = $(this).val();
+
+        $.ajax({
+            url:"createValidate.php",
+            method:"POST",
+            data:{tensanpham:tensp},
+            success:function(data)
+            {
+                if(data != '0')
+                {
+                    $('#availability').html('<span class="text-danger">Đã tồn tại</span>');
+                    $('#submitBtn').prop("disabled", true);
+                }
+                else
+                {
+                    $('#availability').html('<span class="text-success">Hợp lệ</span>');
+                    $('#submitBtn').prop("disabled", false);
+                }
+            }
+        })
+    });
+});

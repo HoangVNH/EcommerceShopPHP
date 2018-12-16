@@ -4,31 +4,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-    $curTime = date('d').date('m').date('Y');
+    $curTime = date('d').date('m').substr(date('Y'), -2, 2);
+    $nums = 1;
+    $maDH = $curTime.str_repeat('0', 2).$nums;
 
     $ddh = new DonDatHang();
     $donDatHang = new DonDatHangBUS();
 
-    $maDH = "";
     $nums = $donDatHang->GetNumRows();
-    if($nums < 2)
+    if($nums > 0)
     {
-        $maDH = $curTime.str_repeat('0', 3).'1';
-    }
-    else{
         $lstMaDH = $donDatHang->GetMaDonHang();
         foreach ($lstMaDH as $MaDH)
             $maDH = $MaDH;
         $maDH = substr($maDH, 6, 3);
         $maDH += 1;
-        $maDH = $curTime.str_repeat('0', 4 - strlen($maDH)).$maDH;
+        $maDH = $curTime.str_repeat('0', 3 - strlen($maDH)).$maDH;
     }
 
     $ddh->MaDonHang = $maDH;
     $ddh->TongTien = $_SESSION['TongTien'];
     $ddh->MaTaiKhoan = $_SESSION['MaTaiKhoan'];
 
-    // Thêm vào database đơn hàng
+    // Thêm vào bảng đơn hàng
     $donDatHang->Insert($ddh);
 
     $ctddh = new ChiTietDonDatHang();

@@ -67,4 +67,12 @@ class HangSanXuatBUS
     public function GetBrandOnId($maHangSanXuat){
         return $this->hangSanXuatDAO->GetBrandOnId($maHangSanXuat);
     }
+
+    public function GetLogoURL($maHangSanXuat){
+        return $this->hangSanXuatDAO->GetLogoURL($maHangSanXuat);
+    }
+
+    public function GetAllName(){
+        return $this->hangSanXuatDAO->GetAllName();
+    }
 }

@@ -20,11 +20,11 @@ class DonDatHangDAO extends DB
     }
 
     public function GetMaDonHang(){
-        $sql = "SELECT MaDonHang FROM dondathang";
+        $sql = "SELECT MaDonHang FROM dondathang WHERE BiXoa = 0";
         $result = $this->ExecuteQuery($sql);
         $lstDonDatHang = array();
         while($row = mysqli_fetch_array($result))
-            $lstDonDatHang[] = $row;
+            $lstDonDatHang[] = $row[0];
 
         return $lstDonDatHang;
     }

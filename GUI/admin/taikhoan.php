@@ -1,7 +1,7 @@
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Trang quản trị</a></li>
-        <li><a class="active" href="taikhoan.php"><i class="fa fa-users"></i> Quản lý tài khoản</a></li>
+        <li><a href="?a=1"><i class="fa fa-home"></i> Trang quản trị</a></li>
+        <li><a class="active" href="?a=2"><i class="fa fa-users"></i> Quản lý tài khoản</a></li>
     </ol>
     <div class="col-xs-12">
         <div class="quanlytaikhoan">
@@ -73,6 +73,4 @@
         <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa Tài Khoản.</p>
         <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa Tài Khoản.</p>
     </div>
-</div>
-<!--END #main-->
 </div>

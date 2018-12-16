@@ -22,16 +22,16 @@
         <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="?a=107" enctype="multipart/form-data" role="form">
             <input type="hidden" name="ex" value="edit"/>
             <div class="form-group">
-                <label for="masp" class="col-sm-3 control-label required">Mã hãng sản xuất <span style="color:red;">*</span></label>
+                <label for="masp" class="col-sm-3 control-label ">Mã hãng sản xuất <span style="color:red;">*</span></label>
                 <div class="col-sm-9">
                     <input readonly name="mahsx" type="text" value="<?php echo $id ?>" class="form-control">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="title" class="col-sm-3 control-label required">Tên hãng sản xuất <span style="color:red;">*</span></label>
+                <label for="title" class="col-sm-3 control-label">Tên hãng sản xuất <span style="color:red;">*</span></label>
                 <div class="col-sm-9">
-                    <input name="tenhsx" type="text" value="<?php echo $hangSanXuat->TenHangSanXuat ?>" class="form-control" required maxlength="30">
+                    <input name="tenhsx" type="text" value="<?php echo $hangSanXuat->TenHangSanXuat ?>" class="form-control" maxlength="30">
                 </div>
             </div>
 

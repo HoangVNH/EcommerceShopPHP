@@ -54,7 +54,7 @@
     <div class="row">
         <?php
         $sanPhamBUS = new SanPhamBUS();
-        $lstSanPham = $sanPhamBUS->GetBestSellers();
+        $lstSanPham = $sanPhamBUS->GetNewestProducts();
         foreach($lstSanPham as $sanPham){
             echo ('
                 <div class="col-xs-12 col-sm-6 col-md-3">
@@ -62,7 +62,7 @@
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>
-                    <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",")  . 'đ</h4>
+                    <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . 'đ</h4>
                 </div>
                 </a>
             </div>');
@@ -86,7 +86,7 @@
     <div class="row">
         <?php
         $sanPhamBUS = new SanPhamBUS();
-        $lstSanPham = $sanPhamBUS->GetNewestProducts();
+        $lstSanPham = $sanPhamBUS->GetBestSellers();
         foreach($lstSanPham as $sanPham){
             echo ('
                 <div class="col-xs-12 col-sm-6 col-md-3">
@@ -94,7 +94,7 @@
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>
-                    <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . 'đ</h4>
+                    <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",")  . 'đ</h4>
                 </div>
                 </a>
             </div>');

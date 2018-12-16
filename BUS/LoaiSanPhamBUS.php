@@ -61,4 +61,8 @@ class LoaiSanPhamBUS
     public function GetOnId($maLoai){
         return $this->loaiSanPhamDAO->GetOnId($maLoai);
     }
+
+    public function GetAllName(){
+        return $this->loaiSanPhamDAO->GetAllName();
+    }
 }

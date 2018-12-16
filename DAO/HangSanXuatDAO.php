@@ -59,6 +59,23 @@ class HangSanXuatDAO extends DB
         return $lstLogo;
     }
 
+    public function GetAllName(){
+        $sql = "SELECT MaHangSanXuat, TenHangSanXuat FROM hangsanxuat";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            return null;
+        $lstHSX = array();
+        while($row = mysqli_fetch_array($result))
+        {
+            $hsx = new HangSanXuat();
+            $hsx->MaHangSanXuat = $row[0];
+            $hsx->TenHangSanXuat = $row[1];
+            $lstHSX[] = $hsx;
+        }
+
+        return $lstHSX;
+    }
+
     public function GetName($maHangSanXuat)
     {
         $sql = "SELECT TenHangSanXuat FROM hangsanxuat WHERE MaHangSanXuat = $maHangSanXuat";
@@ -103,6 +120,13 @@ class HangSanXuatDAO extends DB
 
     public function GetBrandOnId($maHangSanXuat){
         $sql = "SELECT TenHangSanXuat, LogoURL FROM hangsanxuat where MaHangSanXuat = $maHangSanXuat";
+        $result = $this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        return $row;
+    }
+
+    public function GetLogoURL($maHangSanXuat){
+        $sql = "SELECT LogoURL FROM hangsanxuat where MaHangSanXuat = $maHangSanXuat";
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row;

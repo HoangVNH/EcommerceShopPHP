@@ -1,10 +1,10 @@
 <?php
-//if(!isset($_SESSION))
-//    session_start();
-//if((isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'admin') || !(isset($_SESSION['LoaiTaiKhoan']))) {
-//    echo "<script>window.open('../../index.php','_self')</script>";
-//    exit();
-//}
+if(!isset($_SESSION))
+    session_start();
+if((isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'admin') || !(isset($_SESSION['LoaiTaiKhoan']))) {
+    echo "<script>window.open('../../index.php','_self')</script>";
+    exit();
+}
 //?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +77,15 @@
         case 12:
             include("themLoaiSanPham.php");
             break;
+        case 13:
+            include("sanpham.php");
+            break;
+        case 14:
+            include("themSanPham.php");
+            break;
+        case 15:
+            include("suaSanPham.php");
+            break;
         case 103:
             include("exTaiKhoan.php");
             break;
@@ -101,7 +110,18 @@
         case 110:
             include("exLoaiSanPham.php");
             break;
-
+        case 113:
+            include("exXoaSanPham.php");
+            break;
+        case 114:
+            include("exSanPham.php");
+            break;
+        case 115:
+            include("exLogoutAdmin.php");
+            break;
+        default:
+            include("error.php");
+            break;
     }
         ?>
 

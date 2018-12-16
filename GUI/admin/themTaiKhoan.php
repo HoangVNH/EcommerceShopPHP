@@ -105,7 +105,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                     <button type="submit" id="submitBtn" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Xác Nhận</button>
-                    <a class="btn btn-warning" href="taikhoan.php"><small><i class="fa fa-reply"></i></small> Trở về</a>
+                    <a class="btn btn-warning" href="?a=2"><small><i class="fa fa-reply"></i></small> Trở về</a>
                 </div>
             </div>
         </form>

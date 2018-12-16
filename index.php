@@ -1,10 +1,10 @@
 <?php
 if(!isset($_SESSION))
     session_start();
-//if(isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'user') {
-//    echo "<script>window.open('GUI/admin/index.php','_self')</script>";
-//    exit();
-//}
+if(isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'user') {
+    echo "<script>window.open('GUI/admin/index.php','_self')</script>";
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -7,7 +7,7 @@
             <a href="?a=2" class="col-md-2 col-sm-5 col-xs-5">
                 <i class="fa fa-users"></i> <span> Quản Lý Tài Khoản</span>
             </a>
-            <a href="product.html" class="col-md-2 col-sm-5 col-xs-5">
+            <a href="?a=13" class="col-md-2 col-sm-5 col-xs-5">
                 <i class="fa fa-tasks"></i><span> Quản Lý Sản Phẩm</span>
             </a>
             <a href="?a=10" class="col-md-2 col-sm-5 col-xs-5">

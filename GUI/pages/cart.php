@@ -53,7 +53,7 @@ if (isset($_SESSION['MaTaiKhoan'])) {
                                     </select>
                                 </div>
                                 <div class="product-removal">
-                                    <a href="#" class="myDelete" data-sp="<?php echo $key; ?>" style="margin-right: 16px">Xoá</a>
+                                    <a class="myDelete" data-sp="<?php echo $key; ?>" style="margin-right: 16px">Xoá</a>
                                 </div>
                                 <div class="product-line-price"><?php $tong = $value['Gia'] * $value['SoLuong'];
                                     echo number_format($tong, 0, ',', ','); ?>Đ

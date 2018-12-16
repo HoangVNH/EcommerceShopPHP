@@ -107,3 +107,16 @@ $(document).ready(function() {
         })
     });
 });
+
+$('.timkiem').keyup(function () {
+    var mData = $('.timkiem').val();
+    var mLoai = $(this).attr("data-loai");
+    $.ajax({
+        url:'exSearch.php',
+        method:'POST',
+        data:{obj:mData, loai:mLoai},
+        success:function (data) {
+            $('.noidung').html(data);
+        }
+    });
+});

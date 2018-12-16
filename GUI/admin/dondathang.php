@@ -8,8 +8,8 @@
             <h3>QUẢN LÝ ĐƠN ĐẶT HÀNG</h3>
             <div class="form-group">
                 <a href="#" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
-                <div class="btn-group pull-right" id="">
-                    <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
+                <div class="btn-group pull-right">
+                    <input type="text" class="timkiem form-control" id="search" placeholder="Tìm kiếm" data-loai="donhang">
                     <span type="submit" class="fa fa-search"></span>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             </tr>
             </thead>
             <!-- phần boby -->
-            <tbody>
+            <tbody class="noidung">
 
             <?php
                 $donHangBUS = new DonDatHangBUS();
@@ -49,7 +49,7 @@
                     <a href="?a=6&mdh=<?php echo $donHang->MaDonHang ?>">
                         <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa đơn hàng"></i>
                     </a>
-                    <a href="?a=105&mdh=<?php echo $donHang->MaDonHang?>&d=<?php echo $donHang->BiXoa ?>&">
+                    <a href="?a=105&mdh=<?php echo $donHang->MaDonHang?>&d=<?php echo $donHang->BiXoa ?>">
                         <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa đơn hàng"></i>
                     </a>
 
@@ -60,21 +60,6 @@
             </tbody>
         </table>
 
-        <div class="text-right">
-            <ul class="pagination" id="step5">
-                <li class="disabled"><span>«</span></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-            </ul>
-        </div>
-
-        <div class="tinhtrang1">
-            <p><strong><i class="fa fa-bookmark"></i> Ghi chú: </strong></p>
-            <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa đơn hàng.</p>
-            <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa đơn hàng.</p>
-        </div>
         <div class="tinhtrang2">
             <p><strong><i class="fa fa-bookmark"></i> Tình Trạng: </strong></p>
             <p style="width: 200px; padding: 15px 0;" class="ghichu text-center alert-success"> Đã Giao Hàng.</p>

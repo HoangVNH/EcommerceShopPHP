@@ -4,14 +4,14 @@ $connect = mysqli_connect("localhost", "root", "", "1660214_1660359_1660656_quan
 if (isset($_POST["user_name"]))
 {
     $username = mysqli_real_escape_string($connect, $_POST["user_name"]);
-    $query = "SELECT TenDangNhap FROM taikhoan WHERE TenDangNhap = '" . $username . "'";
+    $query = "SELECT TenDangNhap FROM taikhoan WHERE TenDangNhap = N'$username'";
     $res = mysqli_query($connect, $query);
     echo mysqli_num_rows($res);
     mysqli_close($connect);
 } else if (isset($_POST["tenHSX"]))
 {
     $tenHSX = mysqli_real_escape_string($connect, $_POST["tenHSX"]);
-    $query = "SELECT TenHangSanXuat FROM hangsanxuat WHERE TenHangSanXuat = '" . $tenHSX . "'";
+    $query = "SELECT TenHangSanXuat FROM hangsanxuat WHERE TenHangSanXuat = N'$tenHSX'";
     $res = mysqli_query($connect, $query);
     echo mysqli_num_rows($res);
     mysqli_close($connect);

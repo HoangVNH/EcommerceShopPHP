@@ -8,8 +8,8 @@
             <h3>QUẢN LÝ SẢN PHẨM</h3>
             <div class="form-group">
                 <a href="?a=14" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
-                <div class="btn-group pull-right" id="">
-                    <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
+                <div class="btn-group pull-right">
+                    <input id="search" type="text" class="timkiem form-control" placeholder="Tìm kiếm" data-loai="sanpham">
                     <span type="submit" class="fa fa-search"></span>
                 </div>
             </div>
@@ -18,7 +18,6 @@
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
-                <th>STT</th>
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá sản phẩm</th>
@@ -37,15 +36,13 @@
             </tr>
             </thead>
             <!-- phần boby -->
-            <tbody>
+            <tbody class="noidung">
             <?php
             $spBUS = new SanPhamBUS();
             $lstSanPham = $spBUS->GetAllByAdmin();
-            $i = 1;
             foreach ($lstSanPham as $sanPham) {
             ?>
             <tr>
-                <td><?php echo $i++ ?></td>
                 <td><?php echo $sanPham->MaSanPham ?></td>
                 <td><?php echo $sanPham->TenSanPham ?></td>
                 <td><?php echo number_format($sanPham->Gia, 0, ",", ",") ?> </td>
@@ -54,7 +51,7 @@
                 <td><?php echo $sanPham->SoLuongTon ?></td>
                 <td><?php echo $sanPham->SoLuongBan ?></td>
                 <td><?php echo $sanPham->LuotXem ?></td>
-                <td width="25%"><?php echo $sanPham->MoTa ?></td>
+                <td><?php echo $sanPham->MoTa ?></td>
                 <td><?php echo $sanPham->XuatXu ?></td>
                 <td><?php echo $sanPham->MaHangSanXuat ?></td>
                 <td><?php echo $sanPham->MaLoai ?></td>
@@ -73,16 +70,7 @@
             </tbody>
         </table>
 
-        <div class="text-right">
-            <ul class="pagination" id="step5">
-                <li class="disabled"><span>«</span></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-            </ul>
-        </div>
-        <p><strong><i class="fa fa-bookmark"></i> Ghi chú: </strong></p>
+        <p style="margin-top: 45px;"><strong><i class="fa fa-bookmark"></i> Ghi chú: </strong></p>
         <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa sản phẩm</p>
         <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa sản phẩm</p>
     </div>

@@ -9,7 +9,7 @@
             <div class="form-group">
                 <a href="?a=8" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
                 <div class="btn-group pull-right" id="">
-                    <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
+                    <input type="text" class="timkiem form-control" id="search" placeholder="Tìm kiếm" data-loai="hsx">
                     <span type="submit" class="fa fa-search"></span>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <th>Tác vụ</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="noidung">
             <?php
             $hangSanXuatBUS = new HangSanXuatBUS();
             $lstHSX = $hangSanXuatBUS->GetAll();

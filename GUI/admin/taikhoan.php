@@ -9,7 +9,7 @@
             <div class="form-group">
                 <a href="?a=4" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
                 <div class="btn-group pull-right" id="">
-                    <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
+                    <input type="text" class="timkiem form-control" id="search" placeholder="Tìm kiếm" data-loai="taikhoan">
                     <span type="submit" class="fa fa-search"></span>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             </tr>
             </thead>
             <!-- phần boby -->
-            <tbody>
+            <tbody class="noidung">
             <?php $taiKhoanBUS = new TaiKhoanBUS();
                  $lstTaiKhoan = $taiKhoanBUS->GetAll();
                  $i = 1;
@@ -60,15 +60,6 @@
             </tbody>
         </table>
 
-        <div class="text-right">
-            <ul class="pagination" id="step5">
-                <li class="disabled"><span>«</span></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-            </ul>
-        </div>
         <p><strong><i class="fa fa-bookmark"></i> Ghi chú: </strong></p>
         <p class="note-items"><i class="fa fa-pencil text-success"></i> Sửa Tài Khoản.</p>
         <p class="note-items"><i class="fa fa-remove text-danger"></i> Xóa Tài Khoản.</p>

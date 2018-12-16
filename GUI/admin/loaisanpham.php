@@ -9,7 +9,7 @@
             <div class="form-group">
                 <a href="?a=12" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
                 <div class="btn-group pull-right" id="">
-                    <input id="search" name="search" type="text" value="" class="form-control" placeholder="Tìm kiếm">
+                    <input type="text" class="timkiem form-control" id="search" placeholder="Tìm kiếm" data-loai="loaisp">
                     <span type="submit" class="fa fa-search"></span>
                 </div>
             </div>
@@ -26,7 +26,7 @@
             </tr>
             </thead>
             <!-- phần boby -->
-            <tbody>
+            <tbody class="noidung">
             <?php
             $loaiSanPhamBUS = new LoaiSanPhamBUS();
 
@@ -42,10 +42,10 @@
                 <td><?php echo $loaiSanPham->BiXoa ?></td>
                 <td>
                     <a href="?a=11&id=<?php echo $loaiSanPham->MaLoai ?>">
-                        <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa Loại Tài Khoản"></i>
+                        <i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Sửa loại sản phẩm"></i>
                     </a>
                     <a href="?a=109&id=<?php echo $loaiSanPham->MaLoai ?>&d=<?php echo $loaiSanPham->BiXoa ?>">
-                        <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa Loại Tài Khoản"></i>
+                        <i class="fa fa-remove" data-toggle="tooltip" data-placement="top" title="Xóa loại sản phẩm"></i>
                     </a>
                 </td>
             </tr>

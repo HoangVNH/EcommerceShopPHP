@@ -38,7 +38,7 @@ if (isset($_SESSION['MaTaiKhoan'])) {
                                 <div class="product-details">
                                     <div class="product-title"><?php echo $value['TenHienThi']; ?></div>
                                 </div>
-                                <div class="product-price"><?php echo number_format($value['Gia'], 0, ",", ","); ?>Đ</div>
+                                <div class="product-price"><?php echo number_format($value['Gia'], 0, ",", ","); ?> VNĐ</div>
                                 <div class="product-quantity">
                                     <select class="qty" data-masp="<?php echo $key; ?>">
                                         <?php if ($key == $_POST['masp']){
@@ -53,10 +53,10 @@ if (isset($_SESSION['MaTaiKhoan'])) {
                                     </select>
                                 </div>
                                 <div class="product-removal">
-                                    <a class="myDelete" data-sp="<?php echo $key; ?>" style="margin-right: 16px">Xoá</a>
+                                    <a style="cursor: pointer;" class="myDelete" data-sp="<?php echo $key; ?>" style="margin-right: 16px" onmouseover="this.style.color='#0070c9'" onmouseout="this.style.color='#333'"">Xoá</a>
                                 </div>
                                 <div class="product-line-price"><?php $tong = $value['Gia'] * $value['SoLuong'];
-                                    echo number_format($tong, 0, ',', ','); ?>Đ
+                                    echo number_format($tong, 0, ',', ','); ?> VNĐ
                                 </div>
                             </div>
                             <?php $tongTien += $tong;
@@ -65,8 +65,8 @@ if (isset($_SESSION['MaTaiKhoan'])) {
                         <div class="totals">
                             <div class="totals-item totals-item-total">
                                 <label><strong style="font-size: 25px; font-weight: bold; color: #000;">Tổng tiền</strong></label>
-                                <div class="totals-value" id="cart-total"><?php echo number_format($tongTien, 0, ",", ",");
-                                    $_SESSION['TongTien'] = $tongTien; ?>Đ</div>
+                                <div class="totals-value" id="cart-total"><?php echo number_format($tongTien, 0, ",", ",");?> VNĐ
+                                    <?php $_SESSION['TongTien'] = $tongTien; ?></div>
                             </div>
                         </div>
                         <a href="?a=111">

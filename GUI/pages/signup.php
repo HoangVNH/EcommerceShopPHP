@@ -168,23 +168,22 @@
                     </div>
                 </div>
 
-<!--                <h5>Mã Kiểm Tra</h5>-->
-<!--                <div class="form-group row">-->
-<!--                    <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Mã kiểm tra <span style="color: red;">*</span></label>-->
-<!--                    <div class="col-md-5">-->
-<!--                        <img src="?a=4" id="img-captcha"/>-->
-<!--                        <input type="button" value="Tải lại" onclick="$('#img-captcha').attr('src', '?a=4&rand=' + Math.random())" /> <br />-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="form-group row">-->
-<!--                    <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Nhập mã kiểm tra <span style="color: red;">*</span></label>-->
-<!--                    <div class="col-md-8">-->
-<!--                        <input type="text" class="form-control thongtin" id="captcha" name="captcha" required/>-->
-<!--                        <div class="invalid-feedback">-->
-<!--                            Vui lòng nhập mã kiểm tra.-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <h5>Mã Kiểm Tra</h5>
+                <div class="form-group row">
+                    <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Mã kiểm tra <span style="color: red;">*</span></label>
+                    <div class="col-md-5">
+                        <img src="GUI/pages/image.php" id="img-captcha"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Nhập mã kiểm tra <span style="color: red;">*</span></label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control thongtin" id="captcha" name="captcha" required/>
+                        <div class="invalid-feedback">
+                            Vui lòng nhập mã kiểm tra.
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <label for="" class="col-md-4"></label>

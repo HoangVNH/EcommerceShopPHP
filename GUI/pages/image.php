@@ -3,7 +3,9 @@
 if (!isset($_SESSION))
     session_start();
 
-require_once ("C:/xampp/htdocs/DoAnWeb/GUI/pages/captcha.php");
+$des = getcwd().DIRECTORY_SEPARATOR;
+
+require_once ($des . "captcha.php");
 $captcha = new Captcha();
 
 // Lưu code vào $_SESSION

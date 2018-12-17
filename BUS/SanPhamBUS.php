@@ -69,8 +69,8 @@ class SanPhamBUS
         $this->sanPhamDAO->Insert($sanPham);
     }
 
-    public function Delete($sanPham){
-        $this->sanPhamDAO->Delete($sanPham);
+    public function Delete($maSanPham){
+        $this->sanPhamDAO->Delete($maSanPham);
     }
 
     public function SetDelete($maSanPham){

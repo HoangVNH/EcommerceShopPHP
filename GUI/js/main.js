@@ -15,18 +15,18 @@ $(function () {
     var date = new Date();
 
     var month = new Array();
-    month[1] = "January";
-    month[2] = "February";
-    month[3] = "March";
-    month[4] = "April";
-    month[5] = "May";
-    month[6] = "June";
-    month[7] = "July";
-    month[8] = "August";
-    month[9] = "September";
-    month[10] = "October";
-    month[11] = "November";
-    month[12] = "December";
+    month[1] = "Tháng 1";
+    month[2] = "Tháng 2";
+    month[3] = "Tháng 3";
+    month[4] = "Tháng 4";
+    month[5] = "Tháng 5";
+    month[6] = "Tháng 6";
+    month[7] = "Tháng 7";
+    month[8] = "Tháng 8";
+    month[9] = "Tháng 9";
+    month[10] = "Tháng 10";
+    month[11] = "Tháng 11";
+    month[12] = "Tháng 12";
 
     seMonth.append('<option value="">[Tháng]</option>');
     for (i = 1; i < 13; i++) {
@@ -48,8 +48,8 @@ $(function () {
         var year = y.options[y.selectedIndex].value;
         var month = m.options[m.selectedIndex].value;
         var day = d.options[d.selectedIndex].value;
-        if (day == ' ') {
-            var days = (year == ' ' || month == ' ') ? 31 : dayList(month, year);
+        if (day === ' ') {
+            var days = (year === ' ' || month === ' ') ? 31 : dayList(month, year);
             d.options.length = 0;
             d.options[d.options.length] = new Option('[Ngày]', ' ');
             for (var i = 1; i <= days; i++)
@@ -161,42 +161,42 @@ $('#password, #confirmPassword').on('keyup', function(){
     }
 });
 
-// // Kiểm tra Captcha bằng Ajax
-// $(document).ready(function(){
-//     $("#captcha").blur(function () {
-//         var captchaCode = $("#captcha").val();
-//
-//         if($.trim(captchaCode) == ''){
-//             alert("Vui lòng nhập captcha");
-//         }
-//         else{
-//             $.ajax({
-//                 dataType:'json',
-//                 url:'?a=111',
-//                 method:'POST',
-//                 data:{captchacode:captchaCode},
-//                 success:function(result){
-//                     if(!result.hasOwnProperty('error'))
-//                     {
-//                         alert("Kết quả trả về không phù hợp");
-//                     }
-//                     else if(result['error'] == 'success'){
-//                         alert("Captcha hợp lệ");
-//                         $('#register').attr("disabled", false);
-//                     }
-//                     else{
-//                         if (result['captcha'] != '')
-//                         {
-//                             alert(result['captcha']);
-//                             $('#register').attr("disabled", true);
-//                         }
-//                     }
-//                 }
-//             });
-//         }
-//         return false;
-//     });
-// });
+// Kiểm tra Captcha bằng Ajax
+$(document).ready(function(){
+    $("#captcha").blur(function () {
+        var captchaCode = $("#captcha").val();
+
+        if($.trim(captchaCode) == ''){
+            alert("Vui lòng nhập captcha");
+        }
+        else{
+            $.ajax({
+                dataType:'json',
+                url:'GUI/pages/exCaptcha.php',
+                method:'POST',
+                data:{captchacode:captchaCode},
+                success:function(result){
+                    if(!result.hasOwnProperty('error'))
+                    {
+                        alert("Kết quả trả về không phù hợp");
+                    }
+                    else if(result['error'] == 'success'){
+                        alert("Captcha hợp lệ");
+                        $('#register').attr("disabled", false);
+                    }
+                    else{
+                        if (result['captcha'] != '')
+                        {
+                            alert(result['captcha']);
+                            $('#register').attr("disabled", true);
+                        }
+                    }
+                }
+            });
+        }
+        return false;
+    });
+});
 
 // thay đổi số lượng sản phẩm = Ajax ở trang cart.php
 $(document).ready(function(){

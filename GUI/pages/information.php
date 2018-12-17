@@ -125,7 +125,7 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
                                 </div>
                                 <div class="product-quantitys">
                                     <div>
-                                        <?php echo number_format($donDatHang['TongTien'], 0, ",", ","); ?>Đ
+                                        <?php echo number_format($donDatHang['TongTien'], 0, ",", ","); ?> VNĐ
                                     </div>
                                 </div>
                                 <div class="product-line-prices">

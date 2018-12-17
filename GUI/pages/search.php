@@ -65,7 +65,7 @@
                         <div class="thumbnail effect">
                             <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                             <div class="productname">' . $sanPham->TenHienThi . '</div>
-                            <h4 class="price">' . number_format($sanPham->Gia, 0, ".", ".") . 'đ</h4>
+                            <h4 class="price">' . number_format($sanPham->Gia, 0, ".", ".") . ' VNĐ</h4>
                         </div>
                         </a>
                     </div>');

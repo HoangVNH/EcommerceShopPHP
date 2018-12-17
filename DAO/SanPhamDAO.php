@@ -240,8 +240,8 @@ class SanPhamDAO extends DB
         $this->ExecuteQuery($sql);
     }
 
-    public function Delete($sanPham){
-        $sql = "DELETE FROM sanpham WHERE MaSanPham = $sanPham->MaSanPham";
+    public function Delete($maSanPham){
+        $sql = "DELETE FROM sanpham WHERE MaSanPham = $maSanPham";
         $this->ExecuteQuery($sql);
     }
 

@@ -127,6 +127,8 @@ i.fa.fa-user-o.user.dropbtn{
     padding: 50px 0;
     background-color: rgba(0,0,0,0.8);
     color: #fff;
+    position: relative;
+    bottom:  2px;
 }
 .footer-2{
     background-color: #f2f2f2;
@@ -135,6 +137,7 @@ i.fa.fa-user-o.user.dropbtn{
     font-size: 11px;
     font-weight: 400;
     letter-spacing: -.008em;
+    position: relative;
 }
 .footer-2 P{
     margin: 0;
@@ -692,24 +695,28 @@ label {
 }
 
 .totals-value {
-    font-size: 20px;
+    font-size: 27px;
+    font-weight: bold;
     color: #000;
-    margin-top: 5px;
+    margin-top: -2px;
 }
 
 .checkout {
     float: right;
     border: 0;
     margin-top: 20px;
-    padding: 10px 25px;
-    background-color: #6b6;
+    padding: 15px 55px;
+    background-color: #0070c9;
+    background: linear-gradient(#42a1ec,#0070c9);
+    border-color: #07c;
     color: #fff;
-    font-size: 25px;
+    font-size: 18px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .checkout:hover {
-    background-color: #494;
+    background: linear-gradient(rgb(96, 175, 235),#0070c9);
 }
 
 /* hết phần shopping cart */
@@ -808,12 +815,10 @@ a.nav-item.nav-link{
 
     .footer-1{
         position: relative;
-        bottom: 2px;
     }
 
     .footer-2{
         position: relative;
-        bottom: 0;
     }
 }
 
@@ -861,12 +866,10 @@ a.nav-item.nav-link{
 
     .footer-1{
         position: relative;
-        bottom: 2px;
     }
 
     .footer-2{
         position: relative;
-        bottom: 0;
     }
 }
 
@@ -951,13 +954,11 @@ a.nav-item.nav-link{
     }
 
     .footer-1{
-        position: absolute;
-        bottom: 2px;
+        position: relative;
     }
 
     .footer-2{
-        position: absolute;
-        bottom: 0;
+        position: relative;
     }
 }
 
@@ -1030,16 +1031,40 @@ a.nav-item.nav-link{
     }
     .totals .totals-item .totals-value {
         width: 40%;
+    }
+
+    .btnReturn{
+        padding: 15px 23px;
+        border-radius: 12px;
+    }
+
+    .update-cart{
+        border: 0px;
+        background: #fff;
+        cursor: pointer;
+        color: blueviolet;
+    }
 }
 
-.btnReturn{
-    padding: 15px 23px;
-    border-radius: 12px;
+.tieptuc{
+    background-color: #0070c9 !important;  
+    background: linear-gradient(#42a1ec,#0070c9) !important;
+    border-color: #07c !important;
+    padding: 10px 50px;
 }
 
-.update-cart{
-    border: 0px;
-    background: #fff;
-    cursor: pointer;
-    color: blueviolet;
+.tieptuc:hover{
+    background: linear-gradient(rgb(98, 177, 238),#0070c9) !important;
+    color: white;
+}
+
+.menu-hang{
+    color: #000 !important;
+}
+.menu-ngan{
+    width: 200px;
+}
+.menu-hang:hover{
+    background: rgba(0,0,0,0.8);
+    color:  white !important;
 }

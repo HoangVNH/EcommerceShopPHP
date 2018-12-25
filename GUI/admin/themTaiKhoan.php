@@ -8,31 +8,31 @@
         <div class="quanlytaikhoan">
             <h3>TẠO TÀI KHOẢN</h3>
         </div>
-        <form id="admin-form" class="form-horizontal col-xl-9 col-lg-10 col-md-12 col-sm-12" method="post" action="?a=103" enctype="multipart/form-data" role="form">
+        <form id="admin-form" class="form-horizontal col-md-12" method="post" action="?a=103" enctype="multipart/form-data" role="form">
             <input type="hidden" name="ex" value="new" />
             <div class="form-group">
-                <div class="col-sm-9">
+                <div class="col-md-4 col-md-offset-4">
                     <input name="tdn" type="text" id="username" class="form-control" placeholder="Tên đăng nhập" required maxlength="25">
                     <span id="availability"></span>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-9">
+                <div class="col-md-4 col-md-offset-4">
                     <input name="matkhau" type="password" class="form-control" placeholder="Mật khẩu" required maxlength="30">
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-9">
+                <div class="col-md-4 col-md-offset-4">
                     <input name="hoten" type="text" class="form-control" placeholder="Họ tên" maxlength="64">
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-9">
+                <div class="col-md-4 col-md-offset-4">
                     <input name="ngaysinh" type="date" class="form-control" placeholder="Ngày sinh">
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-9">
+                <div class="col-md-4 col-md-offset-4">
                     <select class="form-control" name="diachi" required>
                         <option value="">-- Chọn Thành Phố --</option>
                         <option value="An Giang">An Giang</option>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-9">
+                <div class="col-md-4 col-md-offset-4">
                     <button type="submit" id="submitBtn" class="btn btn-danger"><small><i class="fa fa-save"></i></small> Xác Nhận</button>
                     <a class="btn btn-warning" href="?a=2"><small><i class="fa fa-reply"></i></small> Trở về</a>
                 </div>

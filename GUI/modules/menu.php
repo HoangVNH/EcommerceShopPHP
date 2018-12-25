@@ -15,7 +15,23 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li><a href="?a=2&cat=2">LAPTOP</a></li>
                         <li><a href="?a=2&cat=3">TABLET</a></li>
                         <li><a href="?a=2&cat=4">ĐỒNG HỒ</a></li>
-                        <li><a href="#">HÃNG</a></li>
+                        <li>
+                            <li class="ropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">HÃNG</a>
+                                <div class="dropdown-menu menu-ngan">
+                                    <a class="dropdown-item menu-hang" href="#">Apple</a>
+                                    <a class="dropdown-item menu-hang" href="#">Asus</a>
+                                    <a class="dropdown-item menu-hang" href="#">Dell</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item menu-hang" href="#">Lenovo</a>
+                                    <a class="dropdown-item menu-hang" href="#">HP</a>
+                                    <a class="dropdown-item menu-hang" href="#">MSI</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item menu-hang" href="#">Oppo</a>
+                                    <a class="dropdown-item menu-hang" href="#">Xiaomi</a>
+                                    <a class="dropdown-item menu-hang" href="#">Samsung</a>
+                                </div>
+                        </li>
                         <li><a href="?a=5"><i class="fa fa-shopping-cart" title="Giỏ hàng"></i></a></li>
                         <li>
                             <!-- user's infomation -->

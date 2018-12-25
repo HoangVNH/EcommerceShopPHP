@@ -22,7 +22,7 @@ class TaiKhoanDAO extends DB
 
     public function UpdateByAdmin($taiKhoan)
     {
-        $sql = "UPDATE taikhoan SET TenDangNhap = '$taiKhoan->TenDangNhap', MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi', LoaiTaiKhoan = '$taiKhoan->LoaiTaiKhoan' WHERE MaTaiKhoan = $taiKhoan->MaTaiKhoan";
+        $sql = "UPDATE taikhoan SET MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi', LoaiTaiKhoan = '$taiKhoan->LoaiTaiKhoan' WHERE MaTaiKhoan = $taiKhoan->MaTaiKhoan";
         $this->ExecuteQuery($sql);
     }
 

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div width="100%">
     <div class="row">
         <div class="col-md-12 col-lg-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -89,7 +89,7 @@
                 <div class="thumbnail effect">
                     <img class="img-proc" src="' . $sanPham->HinhURL . '" alt="" width="100%">
                     <div class="productname">' . $sanPham->TenHienThi . '</div>
-                    <h4 class="price">' . number_format($sanPham->Gia, 0, ".", ".") . ' VNĐ</h4>
+                    <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . ' VNĐ</h4>
                 </div>
                 </a>
                 </div>');

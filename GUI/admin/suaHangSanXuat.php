@@ -37,10 +37,8 @@
 
             <div class="form-group" >
                 <label class="col-sm-3 control-label">Logo hãng sản xuất <span style="color:red;">*</span></label>
-                <div class="col-sm-9 col-sm-offset-3">
-                    <div class="col-sm-9">
-                        <input name="logourl" type="file" class="form-control" accept="image/*">
-                    </div>
+                <div class="col-sm-9">
+                    <input name="logourl" type="file" class="form-control" accept="image/*">
                 </div>
             </div>
             <div class="form-group">

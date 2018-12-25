@@ -16,29 +16,27 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li><a href="?a=2&cat=3">TABLET</a></li>
                         <li><a href="?a=2&cat=4">ĐỒNG HỒ</a></li>
                         <li>
-                            <li class="ropdown">
+                            <li>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">HÃNG</a>
                                 <div class="dropdown-menu menu-ngan">
                                     <a class="dropdown-item menu-hang" href="#">Apple</a>
                                     <a class="dropdown-item menu-hang" href="#">Asus</a>
                                     <a class="dropdown-item menu-hang" href="#">Dell</a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item menu-hang" href="#">Lenovo</a>
                                     <a class="dropdown-item menu-hang" href="#">HP</a>
                                     <a class="dropdown-item menu-hang" href="#">MSI</a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item menu-hang" href="#">Oppo</a>
                                     <a class="dropdown-item menu-hang" href="#">Xiaomi</a>
                                     <a class="dropdown-item menu-hang" href="#">Samsung</a>
                                 </div>
                         </li>
-                        <li><a href="?a=5"><i class="fa fa-shopping-cart" title="Giỏ hàng"></i></a></li>
+                        <li><a href="?a=5"><i class="fa fa-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Giỏ hàng"></i></a></li>
                         <li>
                             <!-- user's infomation -->
-                            <a href="?a=13"><i class="fa fa-user-o" title="Thông tin tài khoản"></i></a>
+                            <a href="?a=13"><i class="fa fa-user-o" data-toggle="tooltip" data-placement="bottom" title="Thông tin tài khoản"></i></a>
                         </li>
                         <li>
-                            <a href="?a=108"><i class="fa fa-sign-out" aria-hidden="true"  title="Đăng xuất"></i></a>
+                            <a href="?a=108"><i class="fa fa-sign-out" data-toggle="tooltip" data-placement="bottom"  title="Đăng xuất"></i></a>
                         </li>
                         <li>
                             <form action="?a=14" method="POST">
@@ -51,7 +49,7 @@ if(isset($_SESSION['TenNguoiDung']))
                     </ul>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
     
     <div class="container">
@@ -61,6 +59,7 @@ if(isset($_SESSION['TenNguoiDung']))
             </div>
         </div>
     </div>
+
 <?php } else {  ?>
     <div class="container-fluid header">
         <div class="container">
@@ -72,12 +71,25 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li><a href="?a=2&cat=2">LAPTOP</a></li>
                         <li><a href="?a=2&cat=3">TABLET</a></li>
                         <li><a href="?a=2&cat=4">ĐỒNG HỒ</a></li>
-                        <li><a href="#">HÃNG</a></li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">HÃNG</a>
+                            <div class="dropdown-menu menu-ngan">
+                                <a class="dropdown-item menu-hang" href="#">Apple</a>
+                                <a class="dropdown-item menu-hang" href="#">MSI</a>
+                                <a class="dropdown-item menu-hang" href="#">Samsung</a>
+                                <a class="dropdown-item menu-hang" href="#">Oppo</a>
+                                <a class="dropdown-item menu-hang" href="#">Dell</a>
+                                <a class="dropdown-item menu-hang" href="#">HP</a>
+                                <a class="dropdown-item menu-hang" href="#">Lenovo</a>
+                                <a class="dropdown-item menu-hang" href="#">Xiaomi</a>
+                                <a class="dropdown-item menu-hang" href="#">Asus</a>
+                            </div>
+                        </li>
                         <li><a href="?a=5"><i class="fa fa-shopping-cart"></i></a></li>
                         <li>
-                            <a href="?a=6"><i class="fa fa-sign-in" aria-hidden="true" title="Đăng nhập"></i></a>
+                            <a href="?a=6"><i class="fa fa-sign-in" data-toggle="tooltip" data-placement="bottom" title="Đăng nhập"></i></a>
                         </li>
-                        <li style="margin-left:80px;">
+                        <li style="margin-left: 50px;">
                             <form action="?a=14" method="POST">
                                 <input class="input-search" type="text" name="q" placeholder="Bạn tìm gì . . . ?">
                                 <button type="submit" class=" btn-search">
@@ -88,7 +100,7 @@ if(isset($_SESSION['TenNguoiDung']))
                     </ul>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
     
     <div class="container">

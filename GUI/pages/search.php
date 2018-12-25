@@ -1,5 +1,5 @@
 <!-- slide -->
-<div class="container-fluid">
+<div width="100%">
     <div class="row">
         <div class="col-md-12 col-lg-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

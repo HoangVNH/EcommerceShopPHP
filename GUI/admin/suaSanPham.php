@@ -105,11 +105,9 @@
 
             <div class="form-group" >
                 <label class="col-sm-3 control-label">Hình ảnh<span style="color:red;">*</span></label>
-                <div class="col-sm-9 col-sm-offset-3">
                     <div class="col-sm-9">
                         <input name="hinhurl" type="file" class="form-control" accept="image/*">
                     </div>
-                </div>
             </div>
 
             <div class="form-group">

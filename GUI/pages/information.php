@@ -6,10 +6,10 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
     $taiKhoanBUS = new TaiKhoanBUS();
     $taiKhoan = new TaiKhoan();
     $row = $taiKhoanBUS->GetInfoByID($maTK);
-    $taiKhoan->TenDangNhap = $row[0];
-    $taiKhoan->HoTen = $row[1];
-    $taiKhoan->NgaySinh = $row[2];
-    $taiKhoan->DiaChi = $row[3];
+    $taiKhoan->TenDangNhap = $row[1];
+    $taiKhoan->HoTen = $row[3];
+    $taiKhoan->NgaySinh = $row[4];
+    $taiKhoan->DiaChi = $row[5];
 
     $donDatHangBUS = new DonDatHangBUS();
     $lstDonDatHang = $donDatHangBUS->GetAllById($maTK);

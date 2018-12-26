@@ -57,19 +57,8 @@ if(isset($_SESSION['MaTaiKhoan']) && isset($_SESSION['TenNguoiDung']))
                             <label for="validationTooltip01" class="col-sm-4 col-md-2 col-form-label">Bạn sống tại</label>
                             <div class="col-sm-8 col-md-6">
                                 <?php
-                                $diaChi = array('An Giang'=>'An Giang', 'Bà Rịa - Vũng Tàu'=>'Bà Rịa - Vũng Tàu', 'Bạc Liêu'=>'Bạc Liêu', 'Bắc Kạn'=>'Bắc Kạn',
-                                    'Bắc Giang'=>'Bắc Giang', 'Bắc Ninh'=>'Bắc Ninh', 'Bến Tre'=>'Bến Tre', 'Bình Dương'=>'Bình Dương', 'Bình Định'=>'Bình Định',
-                                    'Bình Phước'=>'Bình Phước', 'Bình Thuận'=>'Bình Thuận', 'Cà Mau'=>'Cà Mau', 'Cao Bằng'=>'Cao Bằng', 'Cần Thơ'=>'Cần Thơ',
-                                    'Đà Nẵng'=>'Đà Nẵng', 'Đắk Lắk'=>'Đắk Lắk', 'Đắk Nông'=>'Đắk Nông', 'Đồng Nai'=>'Đồng Nai', 'Đồng Tháp'=>'Đồng Tháp',
-                                    'Điện Biên'=>'Điện Biên', 'Gia Lai'=>'Gia Lai', 'Hà Giang'=>'Hà Giang', 'Hà Nam'=>'Hà Nam', 'Hà Nội'=>'Hà Nội',
-                                    'Hà Tĩnh'=>'Hà Tĩnh', 'Hải Dương'=>'Hải Dương', 'Hải Phòng'=>'Hải Phòng', 'Hòa Bình'=>'Hòa Bình', 'Hậu Giang'=>'Hậu Giang',
-                                    'Hưng Yên'=>'Hưng Yên', 'Thành Phố Hồ Chí Minh'=>'Thành Phố Hồ Chí Minh', 'Khánh Hòa'=>'Khánh Hòa', 'Kiên Giang'=>'Kiên Giang', 'Kon Tum'=>'Kon Tum',
-                                    'Lai Châu'=>'Lai Châu', 'Lào Cai'=>'Lào Cai', 'Lạng Sơn'=>'Lạng Sơn', 'Lâm Đồng'=>'Lâm Đồng', 'Long An'=>'Long An',
-                                    'Nam Định'=>'Nam Định', 'Nghệ An'=>'Nghệ An', 'Ninh Bình'=>'Ninh Bình', 'Ninh Thuận'=>'Ninh Thuận', 'Phú Thọ'=>'Phú Thọ',
-                                    'Phú Yên'=>'Phú Yên', 'Quảng Bình'=>'Quảng Bình', 'Quảng Nam'=>'Quảng Nam', 'Quảng Ngãi'=>'Quảng Ngãi', 'Quảng Ninh'=>'Quảng Ninh',
-                                    'Quảng Trị'=>'Quảng Trị', 'Sóc Trăng'=>'Sóc Trăng', 'Sơn La'=>'Sơn La', 'Tây Ninh'=>'Tây Ninh', 'Thái Bình'=>'Thái Bình',
-                                    'Thái Nguyên'=>'Thái Nguyên', 'Thanh Hóa'=>'Thanh Hóa', 'Thừa Thiên - Huế'=>'Thừa Thiên - Huế', 'Tiền Giang'=>'Tiền Giang', 'Trà Vinh'=>'Trà Vinh',
-                                    'Tuyên Quang'=>'Tuyên Quang', 'Vĩnh Long'=>'Vĩnh Long', 'Vĩnh Phúc'=>'Vĩnh Phúc', 'Yên Bái'=>'Yên Bái');
+                                $diaChi = array('An Giang', 'Bà Rịa - Vũng Tàu', 'Bạc Liêu', 'Bắc Kạn', 'Bắc Giang', 'Bắc Ninh', 'Bến Tre', 'Bình Dương', 'Bình Định', 'Bình Phước', 'Bình Thuận', 'Cà Mau', 'Cao Bằng', 'Cần Thơ', 'Đà Nẵng', 'Đắk Lắk', 'Đắk Nông', 'Đồng Nai', 'Đồng Tháp', 'Điện Biên', 'Gia Lai', 'Hà Giang', 'Hà Nam', 'Hà Nội', 'Hà Tĩnh', 'Hải Dương', 'Hải Phòng', 'Hòa Bình', 'Hậu Giang', 
+                                    'Hưng Yên', 'Thành Phố Hồ Chí Minh', 'Khánh Hòa', 'Kiên Giang', 'Kon Tum', 'Lai Châu', 'Lào Cai', 'Lạng Sơn', 'Lâm Đồng', 'Long An', 'Nam Định', 'Nghệ An', 'Ninh Bình', 'Ninh Thuận', 'Phú Thọ', 'Phú Yên', 'Quảng Bình', 'Quảng Nam', 'Quảng Ngãi', 'Quảng Ninh', 'Quảng Trị', 'Sóc Trăng', 'Sơn La', 'Tây Ninh', 'Thái Bình', 'Thái Nguyên', 'Thanh Hóa', 'Thừa Thiên - Huế', 'Tiền Giang', 'Trà Vinh', 'Tuyên Quang', 'Vĩnh Long', 'Vĩnh Phúc', 'Yên Bái');
                                 ?>
                                 <select class="custom-select" name="diaChiCuaTui" required>
                                     <?php foreach($diaChi as $id=>$value) { ?>

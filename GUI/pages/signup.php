@@ -40,24 +40,10 @@
                 </div>
                 <div class="form-group row">
                     <label for="validationTooltip02" class="col-md-4 col-form-label text-right">Ngày sinh</label>
-                    <div class="col-md-3">
-                        <select class="custom-select" name="year" id="year" required></select>
+                    <div class="col-md-8">
+                        <input type="date" class="form-control thongtin" name="ngaysinh" required>
                         <div class="invalid-feedback">
-                            Hãy chọn năm sinh.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <select class="custom-select" name="month" id="month" required></select>
-                        <div class="invalid-feedback">
-                            Hãy chọn tháng sinh.
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <select class="custom-select" name="day" id="day" required>
-                            <option value=" " selected="selected">[Ngày]</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Hãy chọn ngày sinh.
+                            Hãy nhập năm sinh
                         </div>
                     </div>
                 </div>

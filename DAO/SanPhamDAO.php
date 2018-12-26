@@ -133,6 +133,25 @@ class SanPhamDAO extends DB
         return $lstSanPham;
     }
 
+    public function GetOnBrandId($br)
+    {
+        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL FROM sanpham WHERE MaHangSanXuat = $br AND BiXoa = 0";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            return null;
+        $lstSanPham = array();
+        while ($row = mysqli_fetch_array($result))
+        {
+            $sanPham = new SanPham();
+            $sanPham->MaSanPham = $row["MaSanPham"];
+            $sanPham->TenHienThi = $row["TenHienThi"];
+            $sanPham->Gia = $row["Gia"];
+            $sanPham->HinhURL = $row["HinhURL"];
+            $lstSanPham[] = $sanPham;
+        }
+        return $lstSanPham;
+    }
+
     public function GetOnCategory($cat)
     {
         $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL from SANPHAM where MaLoai = $cat AND BiXoa = 0";

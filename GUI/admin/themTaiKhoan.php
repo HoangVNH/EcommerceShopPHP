@@ -1,8 +1,8 @@
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Trang quản trị</a></li>
-        <li><a class="" href="taikhoan.php"><i class="fa fa-users"></i> Quản lý tài khoản</a></li>
-        <li><a class="active" href="themTaiKhoan.php"><i class="fa fa-users"></i> Thêm mới tài khoản</a></li>
+        <li><a href="?a=1"><i class="fa fa-home"></i> Trang quản trị</a></li>
+        <li><a class="" href="?a=2"><i class="fa fa-users"></i> Quản lý tài khoản</a></li>
+        <li><a class="active" href="?a=4"><i class="fa fa-users"></i> Thêm mới tài khoản</a></li>
     </ol>
     <div class="col-xs-12">
         <div class="quanlytaikhoan">

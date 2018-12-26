@@ -40,6 +40,11 @@ class SanPhamBUS
         return $this->sanPhamDAO->GetOnBrand($id, $br);
     }
 
+    public function GetOnBrandId($br)
+    {
+        return $this->sanPhamDAO->GetOnBrandId($br);
+    }
+
     public function GetOnCategory($cat)
     {
         return $this->sanPhamDAO->GetOnCategory($cat);

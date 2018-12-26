@@ -70,7 +70,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
                                 <div class="thumbnail effect">
                                 <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                                 <div class="productname">' . $sanPham->TenHienThi . '</div>
-                                <h4 class="price">' . $sanPham->Gia . '</h4></div></a></div>');
+                                <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . ' VNĐ</h4></div></a></div>');
                 }
             ?>
         </div>

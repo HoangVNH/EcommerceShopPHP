@@ -4,10 +4,7 @@ if (isset($_POST["register"]))
 {
     unset($_SESSION['captcha_code']);
     $hoTen = $_POST["fullname"];
-    $ngay = $_POST["day"];
-    $thang = $_POST["month"];
-    $nam = $_POST["year"];
-    $ngaySinh = new DateTime($nam . '-' . $thang . '-' . $ngay);
+    $ngaySinh = new DateTime($_POST['ngaysinh']);
     $ngaySinh = $ngaySinh->format('Y-m-d');
     $diaChi = $_POST["city"];
     $tenDangNhap = $_POST["username"];

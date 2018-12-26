@@ -14,7 +14,7 @@ if(isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'user') {
 </head>
 <body>
     <?php
-        include_once("GUI/modules/menu.php");
+        
         require_once("DTO/ChiTietDonDatHang.php");
         require_once("DTO/DonDatHang.php");
         require_once("DTO/HangSanXuat.php");
@@ -34,6 +34,8 @@ if(isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'user') {
         require_once("BUS/TaiKhoanBUS.php");
         require_once("BUS/DonDatHangBUS.php");
         require_once("BUS/ChiTietDonDatHangBUS.php");
+
+        include_once("GUI/modules/menu.php");
 
         $a = isset($_GET['a']) ? $_GET['a'] : 1;
 
@@ -58,19 +60,22 @@ if(isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'user') {
                 include("GUI/pages/signin.php");
                 break;
             case 7:
-                include ("GUI/pages/signup.php");
+                include("GUI/pages/signup.php");
+                break;
+            case 8:
+                include("GUI/pages/exbrand.php");
                 break;
             case 13:
-                include ("GUI/pages/information.php");
+                include("GUI/pages/information.php");
                 break;
             case 14:
-                include ("GUI/pages/search.php");
+                include("GUI/pages/search.php");
                 break;
             case 105:
                 include("GUI/pages/exCart.php");
                 break;
             case 106:
-                include ("GUI/pages/exSignin.php");
+                include("GUI/pages/exSignin.php");
                 break;
             case 107:
                 include("GUI/pages/exSignup.php");
@@ -91,7 +96,7 @@ if(isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'user') {
                 include("GUI/pages/success.php");
                 break;
             case 113:
-                include ("GUI/pages/exInformation.php");
+                include("GUI/pages/exInformation.php");
                 break;
             default:
                 include("GUI/pages/pError.php");

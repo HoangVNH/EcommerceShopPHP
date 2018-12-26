@@ -5,7 +5,7 @@ if((isset($_SESSION['LoaiTaiKhoan']) && $_SESSION['LoaiTaiKhoan'] != 'admin') ||
     echo "<script>window.open('../../index.php','_self')</script>";
     exit();
 }
-//?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

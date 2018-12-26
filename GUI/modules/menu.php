@@ -16,19 +16,21 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li><a href="?a=2&cat=3">TABLET</a></li>
                         <li><a href="?a=2&cat=4">ĐỒNG HỒ</a></li>
                         <li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">HÃNG</a>
-                                <div class="dropdown-menu menu-ngan">
-                                    <a class="dropdown-item menu-hang" href="#">Apple</a>
-                                    <a class="dropdown-item menu-hang" href="#">Asus</a>
-                                    <a class="dropdown-item menu-hang" href="#">Dell</a>
-                                    <a class="dropdown-item menu-hang" href="#">Lenovo</a>
-                                    <a class="dropdown-item menu-hang" href="#">HP</a>
-                                    <a class="dropdown-item menu-hang" href="#">MSI</a>
-                                    <a class="dropdown-item menu-hang" href="#">Oppo</a>
-                                    <a class="dropdown-item menu-hang" href="#">Xiaomi</a>
-                                    <a class="dropdown-item menu-hang" href="#">Samsung</a>
-                                </div>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">HÃNG</a>
+                            <div class="dropdown-menu menu-ngan">
+
+                                <?php 
+                                    $hangsx = new HangSanXuatBUS();
+                                    $lsthangsx = $hangsx->GetAllName();
+                                    foreach($lsthangsx as $hangsx)
+                                    {
+                                ?>
+                                    <a class="dropdown-item menu-hang" href="?a=8&br=<?php echo $hangsx->MaHangSanXuat?>"><?php echo $hangsx->TenHangSanXuat ?></a>
+                                <?php      
+                                    }
+                                ?>
+
+                            </div>
                         </li>
                         <li><a href="?a=5"><i class="fa fa-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Giỏ hàng"></i></a></li>
                         <li>
@@ -74,15 +76,18 @@ if(isset($_SESSION['TenNguoiDung']))
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">HÃNG</a>
                             <div class="dropdown-menu menu-ngan">
-                                <a class="dropdown-item menu-hang" href="#">Apple</a>
-                                <a class="dropdown-item menu-hang" href="#">MSI</a>
-                                <a class="dropdown-item menu-hang" href="#">Samsung</a>
-                                <a class="dropdown-item menu-hang" href="#">Oppo</a>
-                                <a class="dropdown-item menu-hang" href="#">Dell</a>
-                                <a class="dropdown-item menu-hang" href="#">HP</a>
-                                <a class="dropdown-item menu-hang" href="#">Lenovo</a>
-                                <a class="dropdown-item menu-hang" href="#">Xiaomi</a>
-                                <a class="dropdown-item menu-hang" href="#">Asus</a>
+
+                                <?php 
+                                    $hangsx = new HangSanXuatBUS();
+                                    $lsthangsx = $hangsx->GetAllName();
+                                    foreach($lsthangsx as $hangsx)
+                                    {
+                                ?>
+                                    <a class="dropdown-item menu-hang" href="?a=8&br=<?php echo $hangsx->MaHangSanXuat?>"><?php echo $hangsx->TenHangSanXuat ?></a>
+                                <?php      
+                                    }
+                                ?>
+                                
                             </div>
                         </li>
                         <li><a href="?a=5"><i class="fa fa-shopping-cart"></i></a></li>

@@ -7,9 +7,8 @@
         <div class="quanlytaikhoan">
             <h3>QUẢN LÝ ĐƠN ĐẶT HÀNG</h3>
             <div class="form-group">
-                <a href="#" class="btn btn-submit"><small><i class="fa fa-plus"></i></small> Thêm mới</a>
                 <div class="btn-group pull-right">
-                    <input type="text" class="timkiem form-control" id="search" placeholder="Tìm kiếm" data-loai="donhang">
+                    <input type="text" class="timkiem form-control tim" id="search" placeholder="Tìm kiếm" data-loai="donhang">
                     <span type="submit" class="fa fa-search"></span>
                 </div>
             </div>

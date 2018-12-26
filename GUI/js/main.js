@@ -1,5 +1,3 @@
-
-
 /* Kiểm tra độ mạnh password */
 // Phải chứa kí tự là chữ hoa, số, kí tự gạch dưới hoặc kí tự đặc biệt như $...
 var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
@@ -145,7 +143,6 @@ $(document).ready(function(){
         slm = $(this).val();
         masp = $(this).attr("data-masp");
         $.ajax({
-            // url:"GUI/pages/exQty.php",
             url:"?a=109",
             type:"POST",
             data:"slm="+slm+"&masp="+masp,

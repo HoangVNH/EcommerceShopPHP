@@ -136,19 +136,6 @@ $(document).ready(function($) {
 		}
 	});
 
-	// $('#register').click(function() {
-
-    //     pass1 = $('#password').val();
-    //     pass2 = $('#confirmPassword').val();
-
-    //     if(pass1 != '' && pass2 != '' && strengthResult.attr('class') != 'short')
-    //     {
-    //         $('#password').val('');
-    //         $('#confirmPassword').val('');
-	// 		strengthResult.removeClass().text('Độ mạnh mật khẩu');
-	// 	}
-	// });
-
 	function AddStyle(result) {
 		if (result == 1 || result == 2) {
 			strengthResult.removeClass().addClass('bad').text('Mật khẩu yếu')

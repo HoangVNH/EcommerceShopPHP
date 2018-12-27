@@ -6,11 +6,9 @@
     </div>
 </div>
 
-<div class="main-header create-header">
-    <div class="hero-image-wrapper">
-        <div class="container text-center dangky">
-            <h2>ĐĂNG KÝ TÀI KHOẢN NGAY TỪ BÂY GIỜ</h2>
-        </div>
+<div class="hero-image-wrapper">
+    <div class="container text-center dangky">
+        <h2>ĐĂNG KÝ TÀI KHOẢN NGAY TỪ BÂY GIỜ</h2>
     </div>
 </div>
 
@@ -30,27 +28,21 @@
             <form action="?a=107" method="POST" class="needs-validation" id="mainform">
                 <h5>Thông Tin Cá Nhân</h5>
                 <div class="form-group row">
-                    <label for="validationTooltip01" class="col-md-4 col-form-label text-right">Họ tên của bạn</label>
+                    <label for="fullname" class="col-md-4 col-form-label text-right">Họ tên của bạn</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control thongtin" id="fullname" name="fullname" required>
-                        <div class="invalid-feedback">
-                            Hãy nhập họ tên
-                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="validationTooltip02" class="col-md-4 col-form-label text-right">Ngày sinh</label>
+                    <label for="ngaysinh" class="col-md-4 col-form-label text-right">Ngày sinh</label>
                     <div class="col-md-8">
-                        <input type="date" class="form-control thongtin" name="ngaysinh" required>
-                        <div class="invalid-feedback">
-                            Hãy nhập năm sinh
-                        </div>
+                        <input type="date" class="form-control thongtin" id="ngaysinh" name="ngaysinh" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="validationTooltip01" class="col-md-4 col-form-label text-right">Bạn sống tại</label>
+                    <label for="city" class="col-md-4 col-form-label text-right">Bạn sống tại</label>
                     <div class="col-md-8">
-                        <select class="custom-select" name="city" required>
+                        <select class="custom-select" name="city" id="city" required>
                             <option value="">-- Chọn Thành Phố --</option>
                             <option value="An Giang">An Giang</option>
                             <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
@@ -116,47 +108,34 @@
                             <option value="Vĩnh Phúc">Vĩnh Phúc</option>
                             <option value="Yên Bái">Yên Bái</option>
                         </select>
-                        <div class="invalid-feedback">
-                            Vui lòng chọn thành phố.
-                        </div>
                     </div>
                 </div>
 
                 <h5>Thông Tài Khoản</h5>
                 <div class="form-group  row">
-                    <label for="validationTooltip03" class="col-md-4 col-form-label text-right">Tên đăng nhập <span style="color: red;">*</span></label>
+                    <label for="username" class="col-md-4 col-form-label text-right">Tên đăng nhập <span style="color: red;">*</span></label>
                     <div class="col-md-8">
                         <input type="text" class="form-control thongtin" id="username" name="username" required>
                         <span id="availability"></span>
-                        <div class="invalid-feedback">
-                            Vui lòng nhập tên đăng nhập.
-                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Mật khẩu <span style="color: red;">*</span></label>
+                    <label for="password" class="col-md-4 col-form-label text-right">Mật khẩu <span style="color: red;">*</span></label>
                     <div class="col-md-8">
                         <input type="password" class="form-control thongtin" id="password" name="password" required>
-                        <div class="invalid-feedback">
-                            Vui lòng nhập mật khẩu.
-                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="validationTooltip05" class="col-md-4 col-form-label text-right">Xác nhận mật khẩu <span style="color: red;">*</span></label>
+                    <label for="confirmPassword" class="col-md-4 col-form-label text-right">Xác nhận mật khẩu <span style="color: red;">*</span></label>
                     <div class="col-md-8">
                         <input type="password" class="form-control thongtin" id="confirmPassword" name="confirmPassword" required>
-                        <div class="invalid-feedback">
-                            Vui lòng nhập lại mật khẩu.
-                        </div>
-                        <span id="matchpwd"></span>
-                        <p><div class="" id="passwordStrength"></div></p>
+                        <div id="chkpwd">Độ mạnh mật khẩu</div>
                     </div>
                 </div>
 
                 <h5>Mã Kiểm Tra</h5>
                 <div class="form-group row">
-                    <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Mã kiểm tra <span style="color: red;">*</span></label>
+                    <label for="img-captcha" class="col-md-4 col-form-label text-right">Mã kiểm tra <span style="color: red;">*</span></label>
                     <div class="col-md-5">
                         <img src="GUI/pages/image.php" id="img-captcha"/>
                     </div>
@@ -165,14 +144,11 @@
                     <label for="validationTooltip04" class="col-md-4 col-form-label text-right">Nhập mã kiểm tra <span style="color: red;">*</span></label>
                     <div class="col-md-8">
                         <input type="text" class="form-control thongtin" id="captcha" name="captcha" required/>
-                        <div class="invalid-feedback">
-                            Vui lòng nhập mã kiểm tra.
-                        </div>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="" class="col-md-4"></label>
+                    <label class="col-md-4"></label>
                     <div class="col-md-8">
                         <p>Bằng việc click vào nút Đăng ký bạn đã đồng ý <a href="#" style="color: #0070c9; text-decoration: none;"> Điều khoản sử dụng</a></p>
                         <button type="submit" class="btn gui" id="register" name="register" disabled>Đăng Ký</button>

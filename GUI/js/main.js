@@ -1,51 +1,3 @@
-/* Kiểm tra độ mạnh password */
-// Phải chứa kí tự là chữ hoa, số, kí tự gạch dưới hoặc kí tự đặc biệt như $...
-var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-// Độ dài mật khẩu phải chứa ít nhất là 6 kí tự
-var okRegex = new RegExp("(?=.{6,}).*", "g");
-$(document).ready(function () {
-
-    $('#password, #confirmPassword').on('keyup', function (e) {
-
-        if ($('#password').val() == '' && $('#confirmPassword').val() == '') {
-            $('#passwordStrength').removeClass().html('');
-
-            return false;
-        }
-
-        if ($('#password').val() != '' && $('#confirmPassword').val() != '' && $('#password').val() != $('#confirmPassword').val()) {
-            $('#passwordStrength').removeClass().addClass('alert alert-error').html('Mật khẩu không hợp lệ!');
-            return false;
-        }
-
-        // Phải có chữ cái viết hoa, số và chữ thường
-        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-
-        // Phải có chữ in hoa và chữ thường hoặc chữ thường và số
-        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-
-        // Phải dài ít nhất 6 ký tự
-        var okRegex = new RegExp("(?=.{6,}).*", "g");
-
-        if (okRegex.test($(this).val()) === false) {
-            // Nếu ok regex không khớp với mật khẩu
-            $('#passwordStrength').removeClass().addClass('alert alert-error').html('Mật khẩu phải dài 6 ký tự.');
-
-        } else if (strongRegex.test($(this).val())) {
-            // Nếu reg ex khớp với mật khẩu mạnh
-            $('#passwordStrength').removeClass().addClass('alert alert-success').html('Mật khẩu tốt!');
-        } else if (mediumRegex.test($(this).val())) {
-            // If medium password matches the reg ex
-            $('#passwordStrength').removeClass().addClass('alert alert-info').html('Làm cho mật khẩu của bạn mạnh hơn với nhiều chữ cái viết hoa hơn, nhiều số và ký tự đặc biệt hơn!');
-        } else {
-            // If password is ok
-            $('#passwordStrength').removeClass().addClass('alert alert-error').html('Mật khẩu yếu, hãy thử sử dụng số và chữ hoa.');
-        }
-
-        return true;
-    });
-});
-
 /* show ảnh thông tin*/
 $(function () {
 
@@ -85,19 +37,6 @@ $(document).ready(function() {
             }
         })
     });
-});
-
-// So sánh mật khẩu và mật khẩu nhập lại ở trang đăng ký nếu không trùng khớp sẽ diasabled nút Đăng ký
-$('#password, #confirmPassword').on('keyup', function(){
-    if ($('#password').val() != '' && $('#confirmPassword').val() != '' && $('#password').val() == $('#confirmPassword').val())
-    {
-        $('#matchpwd').html('Mật khẩu trùng khớp').css('color', 'green');
-        $('#register').prop('disabled', false);
-    } else
-    {
-        $('#matchpwd').html('Mật khẩu không trùng khớp').css('color', 'red');
-        $('#register').prop('disabled', true);
-    }
 });
 
 // Kiểm tra Captcha bằng Ajax
@@ -167,4 +106,91 @@ $(document).ready(function (){
             }
         });
    });
+});
+
+$(document).ready(function($) {
+	strengthResult = $('#chkpwd');
+
+	strengthResult.show();
+
+	$('#password').keyup(function(e) {
+        pass1 = $('#password').val(); 
+        pass2 = $('#confirmPassword').val();
+
+		if (pass1 != '') {
+			AddStyle (passwordStrength(pass1, pass2));
+		} else{
+			strengthResult.removeClass().text('Độ mạnh mật khẩu');
+		}
+	});
+
+	$('#confirmPassword').keyup(function() {
+
+        pass1 = $('#password').val();
+        pass2 = $('#confirmPassword').val();
+
+		if (pass1 != '') {
+			AddStyle (passwordStrength(pass1, pass2));
+		} else{
+			strengthResult.removeClass().text('Độ mạnh mật khẩu');
+		}
+	});
+
+	// $('#register').click(function() {
+
+    //     pass1 = $('#password').val();
+    //     pass2 = $('#confirmPassword').val();
+
+    //     if(pass1 != '' && pass2 != '' && strengthResult.attr('class') != 'short')
+    //     {
+    //         $('#password').val('');
+    //         $('#confirmPassword').val('');
+	// 		strengthResult.removeClass().text('Độ mạnh mật khẩu');
+	// 	}
+	// });
+
+	function AddStyle(result) {
+		if (result == 1 || result == 2) {
+			strengthResult.removeClass().addClass('bad').text('Mật khẩu yếu')
+        }
+		if (result == 3){
+			strengthResult.removeClass().addClass('good').text('Mật khẩu trung bình')
+		}
+		if (result == 4){
+			strengthResult.removeClass().addClass('strong').text('Mật khẩu mạnh')
+		}
+		if (result == 5){
+			strengthResult.removeClass().addClass('short').text('Mật khẩu không trùng khớp')
+		}
+	}
+
+	// Password strength meter
+	function passwordStrength(password1, password2) {
+		var mkNgan = 1, mkYeu = 2, mkTot = 3, mkCucManh = 4, kTrungKhop = 5, doManh = 0;
+
+		// password 1 != password 2
+		if ( (password1 !== password2) && password2.length > 0)
+            return kTrungKhop;
+
+		//password < 4
+		if ( password1.length < 4 )
+			return mkNgan;
+
+		if ( password1.match(/[0-9]/) )
+            doManh += 3;
+		if ( password1.match(/[a-z]/) )
+            doManh += 4;
+		if ( password1.match(/[A-Z]/) )
+            doManh += 5;
+		if ( password1.match(/[,!,@,#,$,%,^,&,*,?,_,~,-,(,),]/) )
+            doManh += 6;
+
+		if (doManh < 12 )
+			return mkYeu;
+
+		if (doManh < 14 )
+			return mkTot;
+
+	    return mkCucManh;
+	}
 });

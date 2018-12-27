@@ -1,0 +1,277 @@
+/* phần reponse */
+@media (max-width: 575.98px) {
+
+    .menu ul li{
+        float: left;
+    }
+    .header{
+        min-width: 0;
+    }
+
+    #carouselExampleIndicators{
+        visibility: hidden;
+    }
+    .header-top{
+        width: 100%;
+        height: 100px;
+    }
+    input.form-control.thongtin-2 {width: 76%;}
+    .dangky-header{
+        margin-top: 50px;
+        
+    }
+
+    .manunew a img{
+        width: 125px;
+    }
+    .header-top.mobile
+    {
+        height: 40px;
+    }
+    .mobile-img{
+        margin-left: 22px;
+        margin-bottom: 20px;
+    }
+
+    .laptop-img a img{
+        width: 100px;
+        margin: 0 10px;
+    }
+    .dells{
+        margin-left: 30px !important;
+    }
+
+    .footer-1{
+        position: relative;
+    }
+
+    .footer-2{
+        position: relative;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .menu ul li{
+        float: left !important;
+    }
+    .header{
+        min-width: 0;
+    }
+    #carouselExampleIndicators{
+        visibility: hidden;
+    }
+    input.form-control.thongtin-2 {width: 81%;}
+    .dangky-header{
+        margin-top: 100px;
+    }
+
+    .manunew a img{
+        width: 160px;
+    }
+    .header-top.mobile
+    {
+        height: 40px;
+    }
+    .mobile-img{
+        margin-left: 22px;
+        margin-bottom: 20px;
+    }
+
+    .laptop-img a img{
+        width: 100px;
+        margin: 0 25px;
+    }
+    .dells{
+        margin-left: 60px !important;
+    }
+
+    .tv-img a img{
+        margin-left: 0px;
+    }
+    .tv-logo{
+        margin-left: 10px !important;
+    }
+
+    .footer-1{
+        position: relative;
+    }
+
+    .footer-2{
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .menu ul li{
+        float: left;
+    }
+    .header{
+        min-width: 0;
+    }
+    .header-top{
+        width: 100%;
+        height: 87px;
+    }
+    input.form-control.thongtin-2 {width: 67%;}
+    .dangky-header{
+        margin-top: 30px;
+    }
+    .manunew a img{
+        width: 145px;
+    }
+    .header-top.mobile
+    {
+        height: 50px;
+    }
+    .mobile-img{
+        margin-left: 125px;
+    }
+
+    .laptop-img a img{
+        width: 110px;
+        margin: 0 25px;
+    }
+    .dells{
+        margin-left: 120px !important;
+    }
+
+    .tv-img a img{
+        margin-left: 25px;
+    }
+    .tv-logo{
+        margin-left: 100px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .menu ul li{
+        float: left;
+    }
+    .header{
+        min-width: 0;
+    }
+    .header-top{
+        width: 100%;
+        height: 88px;
+    }
+    input.form-control.thongtin-2 { width: 76%;}
+    .manunew a img{
+        width: 200px;
+    }
+    .header-top.mobile
+    {
+        height: 50px;
+    }
+    .mobile-img{
+        margin-left: 155px;
+    }
+
+    .laptop-img a img{
+        width: 120px;
+        margin: 0 25px;
+    }
+    .dells{
+        margin-left: 210px !important;
+    }
+
+    .tv-img a img{
+        margin-left: 25px;
+    }
+    .tv-logo{
+        margin-left: 120px !important;
+    }
+
+    .footer-1{
+        position: relative;
+    }
+
+    .footer-2{
+        position: relative;
+    }
+}
+
+@media (min-width: 1200px) { 
+    
+}
+/* hết phần reponse */
+
+
+/* reponse cho shopping cart */
+
+@media screen and (max-width: 650px) {
+    .shopping-cart {
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .column-labels {
+        display: none;
+    }
+
+    .product-image {
+        float: right;
+        width: auto;
+    }
+    .product-image img {
+        margin: 0 0 10px 10px;
+    }
+
+    .product-details {
+        float: none;
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    .product-price {
+        clear: both;
+        width: 70px;
+    }
+
+    .product-quantity {
+        width: 100px;
+    }
+    .product-quantity input {
+        margin-left: 20px;
+    }
+
+    .product-removal {
+        width: auto;
+    }
+
+    .product-line-price {
+        float: right;
+        width: 70px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .product-removal {
+        float: right;
+    }
+
+    .product-line-price {
+        float: right;
+        clear: left;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .totals .totals-item label {
+        width: 60%;
+    }
+    .totals .totals-item .totals-value {
+        width: 40%;
+    }
+
+    .btnReturn{
+        padding: 15px 23px;
+        border-radius: 12px;
+    }
+
+    .update-cart{
+        border: 0px;
+        background: #fff;
+        cursor: pointer;
+        color: blueviolet;
+    }
+}

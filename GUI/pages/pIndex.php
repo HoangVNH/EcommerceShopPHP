@@ -1,5 +1,5 @@
 <!-- slide -->
-<div width="100%">
+<div class="myslides" width="100%">
     <div class="row">
         <div class="col-md-12 col-lg-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -10,7 +10,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" width="100%">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="GUI/img/slide_1.jpg" alt="First slide">
                     </div>

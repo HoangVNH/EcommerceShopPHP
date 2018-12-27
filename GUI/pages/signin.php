@@ -7,7 +7,7 @@ if(!isset($_SESSION))
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-5 sign_in">
             <h5>Đăng Nhập</h5>
-            <form action="?a=106" class="needs-validation" method="POST" novalidate>
+            <form action="?a=106" class="needs-validation" method="POST">
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" id="username" placeholder="Tên Đăng Nhập" required>
                     <div class="invalid-feedback">

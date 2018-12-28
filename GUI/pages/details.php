@@ -64,15 +64,17 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
             <?php
                 $lstSanPham = $sP->GetSameType($maLoai, $maSanPham);
                 foreach($lstSanPham as $sanPham)
-                {
-                    echo('<div class="recommend-product-item">
-                            <a href="?a=4&id=' . $sanPham->MaSanPham . '">
-                                <div class="thumbnail effect">
+                { ?>
+                    <div class="recommend-product-item">
+                        <a href="?a=4&id=' . $sanPham->MaSanPham . '">
+                            <div class="thumbnail effect">
                                 <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
                                 <div class="productname">' . $sanPham->TenHienThi . '</div>
-                                <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . ' VNĐ</h4></div></a></div>');
-                }
-            ?>
+                                <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . ' VNĐ</h4>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
         </div>
     </div>
 </div>

@@ -58,17 +58,17 @@
                 $q = $_POST["q"];
                 $sanPhamBUS = new SanPhamBUS();
                 $lstSanPham = $sanPhamBUS->GetSearch($q);
-                foreach($lstSanPham as $sanPham)
-                    echo ('
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a href="?a=4&id=' . $sanPham->MaSanPham . '">
-                        <div class="thumbnail effect">
-                            <img class="img-proc" src="' . $sanPham->HinhURL . '" width="100%">
-                            <div class="productname">' . $sanPham->TenHienThi . '</div>
-                            <h4 class="price">' . number_format($sanPham->Gia, 0, ",", ",") . ' VNĐ</h4>
-                        </div>
-                        </a>
-                    </div>');
+                foreach($lstSanPham as $sanPham) { ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                    <a href="?a=4&id='<?php echo $sanPham->MaSanPham ?> '">
+                    <div class="thumbnail effect">
+                        <img class="img-proc" src="' <?php echo $sanPham->HinhURL ?> '" width="100%">
+                        <div class="productname">' <?php echo $sanPham->TenHienThi ?> '</div>
+                        <h4 class="price">' <?php echo number_format($sanPham->Gia, 0, ",", ",") ?> ' VNĐ</h4>
+                    </div>
+                    </a>
+                </div>
+            <?php } ?>
             }
         ?>
     </div>

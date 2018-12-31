@@ -16,7 +16,7 @@ class TaiKhoanDAO extends DB
 
     public function Update($taiKhoan)
     {
-        $sql = "UPDATE taikhoan SET MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi' WHERE MaTaiKhoan = '$taiKhoan->MaTaiKhoan'";
+        $sql = "UPDATE taikhoan SET  MatKhau = '$taiKhoan->MatKhau', HoTen = '$taiKhoan->HoTen', NgaySinh = '$taiKhoan->NgaySinh', DiaChi = '$taiKhoan->DiaChi' WHERE MaTaiKhoan = '$taiKhoan->MaTaiKhoan'";
         $this->ExecuteQuery($sql);
     }
 

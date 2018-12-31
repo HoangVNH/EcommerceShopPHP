@@ -10,7 +10,7 @@ class SanPhamDAO extends DB
 {
     public function GetNewestProducts()
     {
-        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL FROM sanpham WHERE BiXoa = 0 ORDER BY NgayNhap DESC LIMIT 10";
+        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL FROM sanpham WHERE (MaLoai = 1 or MaLoai = 3 or MaLoai = 4) AND BiXoa = 0 ORDER BY NgayNhap DESC LIMIT 10";
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             return null;
@@ -29,7 +29,7 @@ class SanPhamDAO extends DB
 
     public function GetBestSellers()
     {
-        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL FROM sanpham WHERE BiXoa = 0 ORDER BY SoLuongBan DESC LIMIT 10";
+        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL FROM sanpham WHERE (MaLoai = 1 or MaLoai = 3 or MaLoai = 4) AND BiXoa = 0 ORDER BY SoLuongBan DESC LIMIT 10";
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             return null;
@@ -154,7 +154,7 @@ class SanPhamDAO extends DB
 
     public function GetOnCategory($cat)
     {
-        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL from sanpham where MaLoai = $cat AND BiXoa = 0";
+        $sql = "SELECT MaSanPham, TenHienThi, Gia, HinhURL from SANPHAM where MaLoai = $cat AND BiXoa = 0";
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             return null;
